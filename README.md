@@ -1,3 +1,5 @@
+<div id="top"></div>
+
 # Welcome to The Quiz App
 
 [![GitHub forks](https://img.shields.io/github/forks/mmnldm/thequizapp?style=plastic)](https://img.shields.io/github/forks/mmnldm/thequizapp)
@@ -63,3 +65,5 @@ Thanks for contributing to `The Quiz App`.
 <a href="https://github.com/mmnldm/thequizapp/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=mmnldm/thequizapp" alt ="The Quiz App Contributors"/>
 </a>
+
+<p align="right"><a href="#top">Go to top</a></p>
