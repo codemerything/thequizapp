@@ -3,23 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://api.fontshare.com/v2/css?f[]=melodrama@400,600,500&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="src/style.css">
     <title>The Quiz App</title>
 </head>
 <body>
-    <section>
+    <section class="startMainSection">
         <h1>The Quiz App</h1>
 
         <p>
-            Welcome to The Quiz App! The quiz consists of 5 questions! Enter your name and start the quiz!
+            Welcome to The Quiz App! The quiz consists of 5 questions! <br>Enter your name and start the quiz!
         </p>
 
-        <label for="playerName"> Enter your name:
-            <input type="text" name="playerName" id="playerName">
+        <label for="playerNameInput"> Enter your player name:
+            <input type="text" name="playerNameInput" id="playerNameInput" aria-label="Your player name" placeholder="player name">
         </label>
 
-        <input type="button" value="Start Quiz" id="startQuizBtn">
+        <a href="quiz.html" role="button" aria-labelledby="startQuizBtn"><input type="button" value="Start Quiz" id="startQuizBtn"></a>
 
     </section>
+
+    <script src="src/index.js"></script>
+
 </body>
 </html>
