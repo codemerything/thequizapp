@@ -5,6 +5,9 @@
 }
 :root {
     --beige: #E0AFA8;
+    --darker-beige: #cd9d96;
+    --text-colour: #312b2b;
+    --main-font: 'Melodrama', serif;
 }
 
 body {
@@ -13,10 +16,11 @@ body {
     align-items: center;
     display: flex;
     min-height: 100vh;
+    color: var(--text-colour);
 }
 
 h1 {
-    font-family: 'Melodrama', serif;
+    font-family: var(--main-font);
     font-weight: 600;
     font-size: 6rem;
     text-align: center;
@@ -29,13 +33,52 @@ h1 {
     gap: 25px;
     justify-content: center;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.416);
+    background-color: #ffffff6a;
     border: 1px solid white;
     box-shadow: 5px 5px 5px #451e1e37;
-    border-radius: 10px;
     padding: 30px;
 }
 
 .startMainSection p {
     text-align: center;
+}
+
+.startMainSection label {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+#playerNameInput {
+    padding: 5px 15px;
+    border: 1px solid #918080b1;
+    text-align: center;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+#playerNameInput:focus,
+#playerNameInput:hover {
+	outline: none;
+	border: 1px solid #91808000;
+	box-shadow: 0px 1px 4px #9b7f7fb1;
+}
+
+#startQuizBtn {
+    font-family: inherit;
+    font-size: 1.2rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #918080b1;    
+    cursor: pointer;
+    background-color: var(--beige);
+    outline: none;
+    transition: 400ms;
+    color: initial;                                       
+}
+
+#startQuizBtn:hover {
+    background-color: var(--darker-beige);
 }
