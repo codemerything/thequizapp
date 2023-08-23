@@ -55,3 +55,11 @@ ii - You should see the `New pull request` button.
 <li> Click the branch you want to commit to "Compare across forks"; The *base* repository should be the main repository, the base branch should be the ideal branch.</li>
 <li> You should be prompted to a new page, click `Create pull request` button in that new page.</li>
 </ol>
+
+## Meet the Contributors 
+
+Thanks for contributing to `The Quiz App`.
+
+<a href="https://github.com/mmnldm/thequizapp/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=mmnldm/thequizapp" alt ="The Quiz App Contributors"/>
+</a>
