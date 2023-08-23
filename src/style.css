@@ -3,20 +3,52 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 :root {
-    --beige: #E0AFA8;
-    --darker-beige: #cd9d96;
+    --bg-colour: #E0AFA8;
+    --second-bg-colour: #edbfb8;
     --text-colour: #312b2b;
     --main-font: 'Melodrama', serif;
+    --bg-image: url(bg.png);
+    --player-name-input-colour: white;
+    --player-name-input-shadow: 0px 0px 3px #786060b1;
+    --start-bgn-bg: #c5968f;
+}
+
+/* All of the dark mode colours as of right now! */
+.dark-mode {
+    --bg-colour: #121212;
+    --second-bg-colour: #1b1919;
+    --text-colour: #E0AFA8;
+    --bg-image: url(dark-bg.png);
+    --player-name-input-colour: #262321;
+    --player-name-input-shadow: 0px 0px 3px #ebbfbfb1;
+    --start-bgn-bg: #c5968f;
 }
 
 body {
-    background-color: var(--beige);
+    background-color: var(--bg-colour);
+    background-image: var(--bg-image);
+    background-repeat: repeat;
     justify-content: center;
     align-items: center;
     display: flex;
     min-height: 100vh;
     color: var(--text-colour);
+    font-size: 19px;
+    position: relative;
+}
+
+#modesToggle {
+    position: absolute;
+    width: 40px;
+    font-size: 1.5rem;
+    padding: 5px;
+    border: 1px solid white;
+    background-color: var(--second-bg-colour);
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
 }
 
 h1 {
@@ -33,7 +65,7 @@ h1 {
     gap: 25px;
     justify-content: center;
     align-items: center;
-    background-color: #ffffff6a;
+    background-color: var(--second-bg-colour);
     border: 1px solid white;
     box-shadow: 5px 5px 5px #451e1e37;
     padding: 30px;
@@ -57,13 +89,14 @@ h1 {
     text-align: center;
     font-family: inherit;
     font-size: inherit;
+    background-color: var(--player-name-input-colour);
 }
 
 #playerNameInput:focus,
 #playerNameInput:hover {
 	outline: none;
 	border: 1px solid #91808000;
-	box-shadow: 0px 1px 4px #9b7f7fb1;
+	box-shadow: var(--player-name-input-shadow);
 }
 
 #startQuizBtn {
@@ -73,12 +106,12 @@ h1 {
     border-radius: 5px;
     border: 1px solid #918080b1;    
     cursor: pointer;
-    background-color: var(--beige);
+    background-color: var(--bg-colour);
     outline: none;
     transition: 400ms;
     color: initial;                                       
 }
 
 #startQuizBtn:hover {
-    background-color: var(--darker-beige);
+    background-color: var(--start-btn-bg);
 }
