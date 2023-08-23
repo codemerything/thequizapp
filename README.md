@@ -2,7 +2,7 @@
 
 [![GitHub forks](https://img.shields.io/github/forks/mmnldm/thequizapp?style=plastic)](https://img.shields.io/github/forks/mmnldm/thequizapp)
 [![GitHub issues](https://img.shields.io/github/issues/mmnldm/thequizapp?style=plastic)](https://img.shields.io/github/issues/mmnldm/thequizapp)
-
+[![GitHub stars](https://img.shields.io/github/stars/mmnldm/thequizapp?style=plastic)](https://img.shields.io/github/stars/mmnldm/thequizapp) <br>
 This is a quiz app that allows users to playfully customized quizzes right on their browsers. It is free and open-source.
 
 ## How to Contribute
@@ -50,8 +50,8 @@ Follow these simple steps:
 
 i - Click the `Pull request` in your forked repo to navigate to the Pull request tab.
 
-ii - You should see the `New pull request` button. Proceed with `Step 4`
+ii - You should see the `New pull request` button.
 
-<li> Click on the button “Compare and Pull Request” / "New pull request" .</li>
-<li> You should be prompted to a new page, click `Create pull request` button in that new page. Confirm with the image below.</li>
+<li> Click the branch you want to commit to "Compare across forks"; The *base* repository should be the main repository, the base branch should be the ideal branch.</li>
+<li> You should be prompted to a new page, click `Create pull request` button in that new page.</li>
 </ol>
