@@ -1,0 +1,12 @@
+
+:root {
+    --beige: #E0AFA8;
+}
+
+body {
+    background-color: var(--beige);
+}
+
+p{
+    
+}
