@@ -1,8 +1,41 @@
-
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 :root {
     --beige: #E0AFA8;
 }
 
 body {
     background-color: var(--beige);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    min-height: 100vh;
+}
+
+h1 {
+    font-family: 'Melodrama', serif;
+    font-weight: 600;
+    font-size: 6rem;
+    text-align: center;
+}
+
+/* Start Screen */
+.startMainSection {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.416);
+    border: 1px solid white;
+    box-shadow: 5px 5px 5px #451e1e37;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.startMainSection p {
+    text-align: center;
 }
