@@ -124,4 +124,64 @@ h1 {
     background-color: var(--start-btn-bg-hover);
 }
 
+/* QUIZ STYLE*/
+  
+ .container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+  }
 
+  #question{
+    font-size: 3rem;
+  }
+  
+  #stats{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .stats-prefix {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--player-name-input-text);
+   }
+  .choice-container{
+    display: flex;
+    margin-bottom: 0.5rem;
+    width: 100%;
+    font-size: 1.8rem;
+    border: 0.1rem solid rgba(86, 185, 235, 0.5);
+    background-color: white;
+  }
+
+  .choice-container{
+    display: flex;
+    margin-bottom: 0.5rem;
+    width: 100%;
+    font-size: 1.8rem;
+    border: 0.1rem solid var(--bg-colour);
+    background-color: var(--player-name-input-text);
+  }
+
+  .choice-container:hover{
+    cursor: pointer;
+    box-shadow: 0 0.4rem 1.4rem 0 var(--bg-colour);
+    transform: translateY(-0.1rem);
+    transition: transform 150ms;
+  }
+
+  .choice-prefix{
+    padding: 1.5rem 2.5rem;
+    border: var(--player-name-input-text) 1px solid;
+    background-color: var(--bg-colour);
+    color: white;
+  }
+
+  .choice-text {
+    padding: 1.5rem;
+    width: 100%;
+    color: var(--bg-colour);
+  }
