@@ -1,30 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://api.fontshare.com/v2/css?f[]=melodrama@400,600,500&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="src/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=melodrama@400,600,500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="src/logo.png" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="src/style.css" />
     <title>The Quiz App</title>
-</head>
-<body>
+  </head>
+  <body>
     <section class="startMainSection">
-        <h1>The Quiz App</h1>
+        <button id="modesToggle" data-mode="light" title="Theme mode switch"><i class="fa-solid fa-toggle-off"></i></button>
+      <h1>The Quiz App</h1>
 
-        <p>
-            Welcome to The Quiz App! The quiz consists of 5 questions! <br>Enter your name and start the quiz!
-        </p>
+      <p>
+        Welcome to The Quiz App! The quiz consists of 5 questions! <br />Enter
+        your name and start the quiz!
+      </p>
 
-        <label for="playerNameInput"> Enter your player name:
-            <input type="text" name="playerNameInput" id="playerNameInput" aria-label="Your player name" placeholder="player name">
-        </label>
+      <label for="playerNameInput">
+        Enter your player name:
+        <input
+          type="text"
+          name="playerNameInput"
+          id="playerNameInput"
+          aria-label="Your player name"
+          placeholder="player name"
+        />
+      </label>
 
-        <a href="quiz.html" role="button" aria-labelledby="startQuizBtn"><input type="button" value="Start Quiz" id="startQuizBtn"></a>
-
+      <a href="quiz.html" role="button" aria-labelledby="startQuizBtn"
+        ><input type="button" value="Start Quiz" id="startQuizBtn"
+      /></a>
     </section>
 
     <script src="src/index.js"></script>
-
-</body>
+  </body>
 </html>
