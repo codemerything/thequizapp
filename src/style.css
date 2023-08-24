@@ -63,6 +63,7 @@ h1 {
     text-align: center;
 }
 
+
 /* Start Screen */
 .startMainSection {
     display: flex;
@@ -87,6 +88,105 @@ h1 {
     justify-content: center;
     align-items: center;
 }
+
+/* Quiz Style*/
+
+section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+  }
+  
+  .container > *{
+    width: 100%;
+    background-color: #1b1919;
+  }
+  
+  .flex-column {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .flex-center {
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .justify-center {
+    justify-content: center;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  .hidden {
+    display: none;
+  }
+
+  .details{
+    padding: 1rem;
+    margin-bottom: 1rem;
+    color: #56a5eb;
+    font-size: 1.5rem;
+  }
+
+   /* STATS */
+
+ #stats{
+    display: flex;
+    justify-content: space-between;
+   }
+  
+   .stats-prefix {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--bg-colour);
+   }
+  
+   .stats-main-text{
+    text-align: center;
+  
+   }
+
+     /* GAME STYLING */
+
+  .choice-container{
+    display: flex;
+    margin-bottom: 0.5rem;
+    width: 100%;
+    font-size: 1.2rem;
+    border: 0.1rem solid var(--bg-colour);
+    background-color: var();
+  }
+
+  .choice-container:hover{
+    cursor: pointer;
+    box-shadow: 0 0.4rem 1.4rem 0 var(--bg-colour);
+    transform: translateY(-0.1rem);
+    transition: transform 150ms;
+  }
+
+  .choice-prefix{
+    padding: 1.5rem 2.5rem;
+    background-color: var(--bg-colour);
+    color: var(--text-colour);
+  }
+
+  .choice-text {
+    padding: 1.5rem;
+    width: 100%;
+    color: var(--bg-colour);
+  }
+
+  #question{
+    font-size: 3rem;
+    color: var(--bg-colour);
+  }
+
+
 
 #playerNameInput {
     padding: 5px 15px;
@@ -120,4 +220,9 @@ h1 {
 
 #startQuizBtn:hover {
     background-color: var(--start-btn-bg-hover);
+}
+
+#displaygame{
+    display: flex;
+    justify-content: space-between;
 }
