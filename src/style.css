@@ -63,6 +63,7 @@ h1 {
     text-align: center;
 }
 
+
 /* Start Screen */
 .startMainSection {
     display: flex;
@@ -87,6 +88,7 @@ h1 {
     justify-content: center;
     align-items: center;
 }
+
 
 #playerNameInput {
     padding: 5px 15px;
@@ -183,4 +185,3 @@ h1 {
     width: 100%;
     color: var(--bg-colour);
   }
-  
