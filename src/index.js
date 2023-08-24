@@ -7,11 +7,6 @@ startQuizBtn.addEventListener("click", function () {
   localStorage.setItem("playerName", setPlayerName);
 });
 
-// const darkModeButton = document.getElementById("darkModeButton");
-// darkModeButton.addEventListener("click", () => {
-//   document.documentElement.classList.toggle("dark-mode");
-// });
-
 
 const modesToggle = document.getElementById("modesToggle");
 modesToggle.addEventListener("click", function () {
@@ -19,11 +14,11 @@ modesToggle.addEventListener("click", function () {
 
   if (mode === "light") {
     document.documentElement.classList.toggle("dark-mode");
-    modesToggle.innerHTML = '<i class="fa-solid fa-moon"></i>';
+    modesToggle.innerHTML = '<i class="fa-solid fa-toggle-on"></i>';
     modesToggle.dataset.mode = "dark";
   } else if (mode === "dark") {
     document.documentElement.classList.toggle("dark-mode");
-    modesToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
+    modesToggle.innerHTML = '<i class="fa-solid fa-toggle-off"></i>';
     modesToggle.dataset.mode = "light";
   }
 });

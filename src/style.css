@@ -12,7 +12,9 @@
     --bg-image: url(bg.png);
     --player-name-input-colour: white;
     --player-name-input-shadow: 0px 0px 3px #786060b1;
-    --start-bgn-bg: #c5968f;
+    --start-btn-bg: #E0AFA8;
+    --start-btn-bg-hover: #ce9a91;
+    --player-name-input-text: #121212;
 }
 
 /* All of the dark mode colours as of right now! */
@@ -23,7 +25,9 @@
     --bg-image: url(dark-bg.png);
     --player-name-input-colour: #262321;
     --player-name-input-shadow: 0px 0px 3px #ebbfbfb1;
-    --start-bgn-bg: #c5968f;
+    --start-btn-bg: #E0AFA8;
+    --start-btn-bg-hover: #c98e83;
+    --player-name-input-text: white;
 }
 
 body {
@@ -41,11 +45,12 @@ body {
 
 #modesToggle {
     position: absolute;
-    width: 40px;
-    font-size: 1.5rem;
-    padding: 5px;
+    width: 60px;
+    font-size: 2.5rem;
+    padding: 4px;
     border: 1px solid white;
     background-color: var(--second-bg-colour);
+    color: var(--text-colour);
     top: 20px;
     left: 20px;
     cursor: pointer;
@@ -89,6 +94,7 @@ h1 {
     text-align: center;
     font-family: inherit;
     font-size: inherit;
+    color: var(--player-name-input-text);
     background-color: var(--player-name-input-colour);
 }
 
@@ -106,12 +112,12 @@ h1 {
     border-radius: 5px;
     border: 1px solid #918080b1;    
     cursor: pointer;
-    background-color: var(--bg-colour);
+    background-color: var(--start-btn-bg);
     outline: none;
     transition: 400ms;
     color: initial;                                       
 }
 
 #startQuizBtn:hover {
-    background-color: var(--start-btn-bg);
+    background-color: var(--start-btn-bg-hover);
 }
