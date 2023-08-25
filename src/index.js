@@ -25,19 +25,41 @@ function setPlayerName() {
   localStorage.setItem("playerName", setPlayerName);
 }
 
+// >> To remember the theme you picked last
+// >> Get the theme from local storage, default to "light" if not found
+
+let theme = localStorage.getItem("site_theme") || "light";
+// >> Set the initial theme based on the value from local storage
+theme === "light" ? setLightTheme() : setDarkTheme();
+
+var mode = modesToggle.dataset.mode;
+
+// >> Function to set the dark theme
+function setDarkTheme() {
+  document.documentElement.classList.toggle("dark-mode");
+  modesToggle.innerHTML = '<i class="fa-solid fa-toggle-off"></i>';
+  localStorage.setItem("site_theme", "dark");
+  theme = 'dark';
+  modesToggle.dataset.mode = "light";
+  mode = 'light'; // Update the mode variable
+}
+
+//  >> Function to set the dark theme
+function setLightTheme() {
+  document.documentElement.classList.toggle("dark-mode");
+  modesToggle.innerHTML = '<i class="fa-solid fa-toggle-on"></i>';
+  localStorage.setItem("site_theme", "light");
+  theme = 'light';
+  modesToggle.dataset.mode = "dark";
+  mode = 'dark';
+}
 
 // >> The Light/Dark Mode Switch!! 
 modesToggle.addEventListener("click", function () {
-  var mode = modesToggle.dataset.mode;
-
   if (mode === "light") {
-    // Toggle the dark mode colours, change the icon in the switch and update the data set in the switch element!
-    document.documentElement.classList.toggle("dark-mode");
-    modesToggle.innerHTML = '<i class="fa-solid fa-toggle-on"></i>';
-    modesToggle.dataset.mode = "dark";
-  } else if (mode === "dark") {
-    document.documentElement.classList.toggle("dark-mode");
-    modesToggle.innerHTML = '<i class="fa-solid fa-toggle-off"></i>';
-    modesToggle.dataset.mode = "light";
+    setLightTheme();
+  } else if(mode === "dark") {
+    setDarkTheme();
   }
 });
+
