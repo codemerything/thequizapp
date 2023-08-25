@@ -153,7 +153,12 @@ h1 {
   justify-content: space-between;
 }
 
-.stats-prefix {
+.stats-item {
+    display: flex;
+    gap: 5px;
+}
+
+.stats-prefix, .stats-item {
   text-align: center;
   font-size: 2rem;
   color: var(--player-name-input-text);

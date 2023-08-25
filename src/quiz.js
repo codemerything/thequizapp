@@ -5,11 +5,13 @@
 // insertPlayerName.textContent = getPlayerName;
 
 // Idea 1: Generate the questions from an object and insert them dynamically into the right elements
-var gameQuestionNumber = document.querySelector("#game").dataset.question;
+var gameQuestionNumber = parseInt(document.querySelector("#game").dataset.question);
 var questionNumberText = document.querySelector("#progressText");
 var scoreText = document.querySelector("#score");
 var questionText = document.querySelector("#question");
 var answerBoxes = document.querySelectorAll(".choice-text");
+
+scoreText.textContent = "0";
 
 var questions = {
   question1: {
@@ -42,6 +44,7 @@ var questions = {
 function runQuestion(x) {
   // Set the question set  
   var q = questions["question" + x];
+  var rightAnswer = q.correctAnswer;
 
   // Add the question number
   questionNumberText.textContent = "Question " + q.questionNumber;
@@ -54,6 +57,20 @@ function runQuestion(x) {
   for (i = 0; i < answerBoxes.length; ++i) {
     answerBoxes[i].textContent = q.answers[i];
   }
+
+  answerBoxes.forEach((answerBox) => {
+    answerBox.addEventListener('click', () => {
+        if (answerBox.textContent == rightAnswer){
+            answerBox.style.color = "green";
+        }
+        else if (answerBox.textContent != rightAnswer) {
+            answerBox.style.color = "red";
+        }
+      
+    });
+  });
+
+
 }
 
-runQuestion(1);
+runQuestion(gameQuestionNumber);
