@@ -8,10 +8,11 @@
 var gameQuestionNumber = parseInt(document.querySelector("#game").dataset.question);
 var questionNumberText = document.querySelector("#progressText");
 var scoreText = document.querySelector("#score");
+var score = 0;
 var questionText = document.querySelector("#question");
 var answerBoxes = document.querySelectorAll(".choice-text");
 
-scoreText.textContent = "0";
+scoreText.textContent = score;
 
 var questions = {
   question1: {
@@ -60,8 +61,11 @@ function runQuestion(x) {
 
   answerBoxes.forEach((answerBox) => {
     answerBox.addEventListener('click', () => {
+        // TESTING: when you click on the right answer, it turns green and adds one point
         if (answerBox.textContent == rightAnswer){
             answerBox.style.color = "green";
+            score += 1;
+            scoreText.textContent = score;
         }
         else if (answerBox.textContent != rightAnswer) {
             answerBox.style.color = "red";
