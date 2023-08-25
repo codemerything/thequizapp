@@ -13,7 +13,7 @@ This is a quiz app that allows users to playfully customized quizzes right on th
 2. Clone the project, you can use the following command:
 
 ```bash
-git clone https://github.com/mmnldm/Code-Magic
+git clone https://github.com/mmnldm/thequizapp
 ```
 
 3. Navigate to the project directory
