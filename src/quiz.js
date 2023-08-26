@@ -76,6 +76,9 @@ function runQuestion(x) {
         answerBox.style.color = "red";
       }
 
+      // Set the new score to localStorage
+      localStorage.setItem("score", score);
+
       // This is set incase we want to add some kind of effect or timer before the next question
       setTimeout(function () {
         answerBox.style.color = "var(--bg-colour)";
