@@ -7,6 +7,10 @@
 [![GitHub stars](https://img.shields.io/github/stars/mmnldm/thequizapp?style=plastic)](https://img.shields.io/github/stars/mmnldm/thequizapp) <br>
 This is a quiz app that allows users to playfully customized quizzes right on their browsers. It is free and open-source.
 
+A beginner-friendly project built with: <br>
+[![My Skills](https://skillicons.dev/icons?i=js,html,css)](https://skillicons.dev)
+
+
 ## 🛠️ Installation Steps
 
 1. [Fork](https://github.com/mmnldm/thequizapp/fork) the project. Click on the <a href="https://github.com/mmnldm/thequizapp/fork"><img src="https://i.imgur.com/G4z1kEe.png" height="15" width="15"></a> icon in the top right to get started
