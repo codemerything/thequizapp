@@ -26,12 +26,18 @@ let questions = {
     answers: ["Elephant", "Giraffe", "Blue Whale", "Rhinoceros"],
     correctAnswer: "Blue Whale",
   },
-  question3: {
-    questionNumber: "3",
-    question: "What is the largest mammal on Earth?",
-    answers: ["Elephant", "Giraffe", "Blue Whale", "Rhinoceros"],
-    correctAnswer: "Blue Whale",
+  question4: {
+    questionNumber: "4",
+    question: 'Who wrote the play "Romeo and Juliet"?',
+    answers: ["Mark Twain", "Jane Austen", "Charles Dickens", "William Shakespeare"],
+    correctAnswer: "William Shakespeare",
   },
+  question5: {
+    questionNumber: "5",
+    question: 'Which famous scientist developed the theory of general relativity?',
+    answers: ["Isaac Newton", "Albert Einstein", "Galileo Galilei", "Nikola Tesla"],
+    correctAnswer: "Albert Einstein",
+  }
 };
 let totalQuestions = Object.keys(questions).length; // The total questions = the total number of questions in the questions object
 
@@ -43,9 +49,9 @@ runQuestion(gameQuestionNumber);
 //  >> Function to set the questions up dynamically!
 function runQuestion(x) {
   // Run this if x is higher than the number of questions available
-  // + + Go to the end screen page!
+  // + + Until the end [age is made, go to the start screen page!
   if (x > totalQuestions) {
-    return;
+    window.location.href = "index.html";
   }
 
   // Set the question set
