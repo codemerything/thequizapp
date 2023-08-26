@@ -7,56 +7,66 @@
 [![GitHub stars](https://img.shields.io/github/stars/mmnldm/thequizapp?style=plastic)](https://img.shields.io/github/stars/mmnldm/thequizapp) <br>
 This is a quiz app that allows users to playfully customized quizzes right on their browsers. It is free and open-source.
 
-## How to Contribute
-### Step 1. Fork this repo
-### Step 2. Clone the forked repository to your local machine. 
+A beginner-friendly project built with: <br>
+[![My Skills](https://skillicons.dev/icons?i=js,html,css)](https://skillicons.dev)
 
-Clone this project to your local code editor (VSCode), go to your terminal, navigate to your desired folder, and use the following command in your terminal:
 
-```bash
-git clone https://github.com/mmnldm/thequizapp.git
-```
-### Step 3. Switch to the designated branch for your changes. 
+## 🛠️ Installation Steps
 
-To switch to the designated branch, you can use the git checkout command and specify the name of the branch you want to switch to. Here’s an example:
+1. [Fork](https://github.com/mmnldm/thequizapp/fork) the project. Click on the <a href="https://github.com/mmnldm/thequizapp/fork"><img src="https://i.imgur.com/G4z1kEe.png" height="15" width="15"></a> icon in the top right to get started
+2. Clone the project, you can use the following command:
 
 ```bash
-git checkout branch_name
-``` 
-### Step 4. Make Changes to your files in the branch. 
-Make the necessary changes according to the task assigned to you.
-### Step 5. Commit your changes. 
-To commit your changes 
-```bash
-git add .
-```
-```bash
-git commit -m "commit message"
+git clone https://github.com/mmnldm/thequizapp
 ```
 
-### Step 6. Push your changes to your forked repository. 
-To push your changes to the repo 
+3. Navigate to the project directory
+
 ```bash
-git push origin <branch_name>
+cd thequizapp
 ```
-### Step 7. Create a pull request.
 
-After pushing changes to your branch, you are ready to send a pull request.
+4. Install dependencies with npm install
 
-Follow these simple steps: 
-<ol>
-<li> Go to the main page of the repository in your browser.</li>
+```bash
+npm install
+```
 
-<li> Refresh your page.</li>
-<li> You should see a “Compare and Pull Request” button. If you see the button </li>
+```bash
+npm install -g commitizen
+```
 
-i - Click the `Pull request` in your forked repo to navigate to the Pull request tab.
+5. Run the project
 
-ii - You should see the `New pull request` button.
+To run the project, just open the file in your browser.
 
-<li> Click the branch you want to commit to "Compare across forks"; The *base* repository should be the main repository, the base branch should be the ideal branch.</li>
-<li> You should be prompted to a new page, click `Create pull request` button in that new page.</li>
-</ol>
+## 🥂 After making a change
+
+1. Create a new branch
+
+```bash
+git checkout -b YourBranchName
+```
+
+2. Add it to staging area
+
+> NOTE: don't commit the package.json
+
+```bash
+git add <path to the file you worked on>
+```
+
+3. Commit your changes with
+
+```bash
+git cz
+```
+
+4. Push your changes
+
+```bash
+git push
+```
 
 ## Meet the Contributors 
 
