@@ -1,20 +1,13 @@
-// var insertPlayerName = document.querySelector("#insertPlayerName");
-
-// // Get the player's name from localStorage
-// var getPlayerName = localStorage.getItem("playerName");
-// insertPlayerName.textContent = getPlayerName;
-
-// Idea 1: Generate the questions from an object and insert them dynamically into the right elements
-var gameQuestionNumber = parseInt(document.querySelector("#game").dataset.question);
-var questionNumberText = document.querySelector("#progressText");
-var scoreText = document.querySelector("#score");
-var score = 0;
-var questionText = document.querySelector("#question");
-var answerBoxes = document.querySelectorAll(".choice-text");
-
-scoreText.textContent = score;
-
-var questions = {
+// >> VARIABLES << //
+let gameQuestionNumber = parseInt(
+  document.querySelector("#game").dataset.question
+);
+const questionNumberText = document.querySelector("#progressText");
+const scoreText = document.querySelector("#score");
+let score = 0;
+const questionText = document.querySelector("#question");
+const answerBoxes = document.querySelectorAll(".choice-text");
+let questions = {
   question1: {
     questionNumber: "1",
     question: 'Which planet is known as the "Red Planet"?',
@@ -40,12 +33,24 @@ var questions = {
     correctAnswer: "Blue Whale",
   },
 };
+let totalQuestions = Object.keys(questions).length; // The total questions = the total number of questions in the questions object
 
+// >> MISC << //
+scoreText.textContent = score;
+runQuestion(gameQuestionNumber);
+
+// >> FUNCTIONS << //
 //  >> Function to set the questions up dynamically!
 function runQuestion(x) {
-  // Set the question set  
-  var q = questions["question" + x];
-  var rightAnswer = q.correctAnswer;
+  // Run this if x is higher than the number of questions available
+  // + + Go to the end screen page!
+  if (x > totalQuestions) {
+    return;
+  }
+
+  // Set the question set
+  let q = questions["question" + x];
+  let rightAnswer = q.correctAnswer;
 
   // Add the question number
   questionNumberText.textContent = "Question " + q.questionNumber;
@@ -53,28 +58,37 @@ function runQuestion(x) {
   // Add the actual question
   questionText.textContent = q.question;
 
-  // Add the possible answers by looping through
-  // the choice-boxes in the document and adding the answers in
+  // Add the possible answers by looping through the choice-boxes in the document and adding the answers in
   for (i = 0; i < answerBoxes.length; ++i) {
     answerBoxes[i].textContent = q.answers[i];
   }
 
+  // When user clicks an answer
   answerBoxes.forEach((answerBox) => {
-    answerBox.addEventListener('click', () => {
-        // TESTING: when you click on the right answer, it turns green and adds one point
-        if (answerBox.textContent == rightAnswer){
-            answerBox.style.color = "green";
-            score += 1;
-            scoreText.textContent = score;
-        }
-        else if (answerBox.textContent != rightAnswer) {
-            answerBox.style.color = "red";
-        }
-      
+    answerBox.addEventListener("click", () => {
+      if (answerBox.textContent == rightAnswer) {
+        score += 1;
+        scoreText.textContent = score;
+        answerBox.style.color = "green";
+      }
+
+      else if (answerBox.textContent != rightAnswer) {
+        answerBox.style.color = "red";
+      }
+
+      // This is set incase we want to add some kind of effect or timer before the next question
+      setTimeout(function () {
+        answerBox.style.color = "var(--bg-colour)";
+        let newQuestion = x + 1;
+        document.querySelector("#game").dataset.question = newQuestion;
+        runQuestion(newQuestion);
+      }, 500);
     });
   });
-
-
 }
 
-runQuestion(gameQuestionNumber);
+// let insertPlayerName = document.querySelector("#insertPlayerName");
+
+// // Get the player's name from localStorage
+// let getPlayerName = localStorage.getItem("playerName");
+// insertPlayerName.textContent = getPlayerName;
