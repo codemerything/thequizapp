@@ -7,13 +7,17 @@
 [![GitHub stars](https://img.shields.io/github/stars/mmnldm/thequizapp?style=plastic)](https://img.shields.io/github/stars/mmnldm/thequizapp) <br>
 This is a quiz app that allows users to playfully customized quizzes right on their browsers. It is free and open-source.
 
+A beginner-friendly project built with: <br>
+[![My Skills](https://skillicons.dev/icons?i=js,html,css)](https://skillicons.dev)
+
+
 ## 🛠️ Installation Steps
 
 1. [Fork](https://github.com/mmnldm/thequizapp/fork) the project. Click on the <a href="https://github.com/mmnldm/thequizapp/fork"><img src="https://i.imgur.com/G4z1kEe.png" height="15" width="15"></a> icon in the top right to get started
 2. Clone the project, you can use the following command:
 
 ```bash
-git clone https://github.com/mmnldm/Code-Magic
+git clone https://github.com/mmnldm/thequizapp
 ```
 
 3. Navigate to the project directory
@@ -44,7 +48,7 @@ To run the project, just open the file in your browser.
 git checkout -b YourBranchName
 ```
 
-2. Add it to staging area
+2. Add it to the staging area
 
 > NOTE: don't commit the package.json
 
