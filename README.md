@@ -48,7 +48,7 @@ To run the project, just open the file in your browser.
 git checkout -b YourBranchName
 ```
 
-2. Add it to staging area
+2. Add it to the staging area
 
 > NOTE: don't commit the package.json
 
