@@ -66,6 +66,7 @@ function runQuestion(x) {
             answerBox.style.color = "green";
             score += 1;
             scoreText.textContent = score;
+            setTimeout( () => {runQuestion(x+1)}, 500);
         }
         else if (answerBox.textContent != rightAnswer) {
             answerBox.style.color = "red";
