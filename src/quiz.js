@@ -57,8 +57,11 @@ function runQuestion(x) {
   // the choice-boxes in the document and adding the answers in
   for (i = 0; i < answerBoxes.length; ++i) {
     answerBoxes[i].textContent = q.answers[i];
-  }
 
+    // reset the colour for each question (i.e. turn from red/green to bg colour)
+    answerBoxes[i].style.color = "var(--bg-colour)";
+  }
+  
   answerBoxes.forEach((answerBox) => {
     answerBox.addEventListener('click', () => {
         // TESTING: when you click on the right answer, it turns green and adds one point
@@ -66,7 +69,7 @@ function runQuestion(x) {
             answerBox.style.color = "green";
             score += 1;
             scoreText.textContent = score;
-            setTimeout( () => {runQuestion(x+1)}, 500);
+            setTimeout( () => {runQuestion(x+1)}, 1000);
         }
         else if (answerBox.textContent != rightAnswer) {
             answerBox.style.color = "red";
