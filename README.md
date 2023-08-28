@@ -26,17 +26,7 @@ git clone https://github.com/mmnldm/thequizapp
 cd thequizapp
 ```
 
-4. Install dependencies with npm install
-
-```bash
-npm install
-```
-
-```bash
-npm install -g commitizen
-```
-
-5. Run the project
+4. Run the project
 
 To run the project, just open the file in your browser.
 
@@ -50,8 +40,6 @@ git checkout -b YourBranchName
 
 2. Add it to staging area
 
-> NOTE: don't commit the package.json
-
 ```bash
 git add <path to the file you worked on>
 ```
@@ -59,7 +47,7 @@ git add <path to the file you worked on>
 3. Commit your changes with
 
 ```bash
-git cz
+git commit -m <commit message> 
 ```
 
 4. Push your changes
