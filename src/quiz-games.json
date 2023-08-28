@@ -1,0 +1,146 @@
+{
+  "quiz1": {
+    "quizId": "1",
+    "title": "Science Trivia",
+    "author": "@ScienceGuy3000",
+    "dateCreated": "2023-08-27",
+    "questions": {
+      "question1": {
+        "questionNumber": "1",
+        "question": "Which planet is known as the \"Red Planet\"?",
+        "answers": ["Venus", "Saturn", "Jupiter", "Mars"],
+        "correctAnswer": "Mars"
+      },
+      "question2": {
+        "questionNumber": "2",
+        "question": "What is the capital of France?",
+        "answers": ["London", "Paris", "Madrid", "Berlin"],
+        "correctAnswer": "Paris"
+      },
+      "question3": {
+        "questionNumber": "3",
+        "question": "What is the largest mammal on Earth?",
+        "answers": ["Elephant", "Giraffe", "Blue Whale", "Rhinoceros"],
+        "correctAnswer": "Blue Whale"
+      },
+      "question4": {
+        "questionNumber": "4",
+        "question": "Who wrote the play \"Romeo and Juliet\"?",
+        "answers": [
+          "Mark Twain",
+          "Jane Austen",
+          "Charles Dickens",
+          "William Shakespeare"
+        ],
+        "correctAnswer": "William Shakespeare"
+      },
+      "question5": {
+        "questionNumber": "5",
+        "question": "Which famous scientist developed the theory of general relativity?",
+        "answers": [
+          "Isaac Newton",
+          "Albert Einstein",
+          "Galileo Galilei",
+          "Nikola Tesla"
+        ],
+        "correctAnswer": "Albert Einstein"
+      }
+    }
+  },
+  "quiz2": {
+    "quizId": "2",
+    "title": "History Quiz",
+    "author": "@FavorGirl20",
+    "dateCreated": "2023-08-27",
+    "questions": {
+      "question1": {
+        "questionNumber": "1",
+        "question": "Which year did Christopher Columbus discover America?",
+        "answers": ["1492", "1776", "1812", "1620"],
+        "correctAnswer": "1492"
+      },
+      "question2": {
+        "questionNumber": "2",
+        "question": "Who was the first President of the United States?",
+        "answers": [
+          "George Washington",
+          "Thomas Jefferson",
+          "Abraham Lincoln",
+          "John Adams"
+        ],
+        "correctAnswer": "George Washington"
+      },
+      "question3": {
+        "questionNumber": "3",
+        "question": "In which war did the Battle of Gettysburg take place?",
+        "answers": [
+          "World War I",
+          "Civil War",
+          "Vietnam War",
+          "Revolutionary War"
+        ],
+        "correctAnswer": "Civil War"
+      },
+      "question4": {
+        "questionNumber": "4",
+        "question": "Which famous speech began with 'Four score and seven years ago'?",
+        "answers": [
+          "Gettysburg Address",
+          "I Have a Dream",
+          "The Emancipation Proclamation",
+          "Declaration of Independence"
+        ],
+        "correctAnswer": "Gettysburg Address"
+      },
+      "question5": {
+        "questionNumber": "5",
+        "question": "Who is known for inventing the telephone?",
+        "answers": [
+          "Alexander Graham Bell",
+          "Thomas Edison",
+          "Nikola Tesla",
+          "Benjamin Franklin"
+        ],
+        "correctAnswer": "Alexander Graham Bell"
+      }
+    }
+  },
+  "quiz3": {
+    "quizId": "3",
+    "title": "Geography Challenge",
+    "author": "@GeorgeWashingtonUSA",
+    "dateCreated": "2023-08-27",
+    "questions": {
+      "question1": {
+        "questionNumber": "1",
+        "question": "Which continent is known as the 'Land Down Under'?",
+        "answers": ["Asia", "Africa", "Australia", "South America"],
+        "correctAnswer": "Australia"
+      },
+      "question2": {
+        "questionNumber": "2",
+        "question": "What is the longest river in the world?",
+        "answers": ["Nile", "Amazon", "Yangtze", "Mississippi"],
+        "correctAnswer": "Nile"
+      },
+      "question3": {
+        "questionNumber": "3",
+        "question": "Which mountain range runs along the northern border of India?",
+        "answers": ["Rocky Mountains", "Andes", "Himalayas", "Alps"],
+        "correctAnswer": "Himalayas"
+      },
+      "question4": {
+        "questionNumber": "4",
+        "question": "What is the capital of Brazil?",
+        "answers": ["Buenos Aires", "São Paulo", "Rio de Janeiro", "Brasília"],
+        "correctAnswer": "Brasília"
+      },
+      "question5": {
+        "questionNumber": "5",
+        "question": "Which country is known as the 'Land of the Rising Sun'?",
+        "answers": ["China", "Japan", "South Korea", "Vietnam"],
+        "correctAnswer": "Japan"
+      }
+    }
+  }
+}

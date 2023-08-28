@@ -1,4 +1,4 @@
-// >> THEME SELECTION CONTINOUS << //
+// >> THEME SELECTION CONTINUOUS << //
 let theme = localStorage.getItem("site_theme") || "light";
 theme === "light" ? document.documentElement.classList.remove("dark-mode") : document.documentElement.classList.add("dark-mode");
 // >> VARIABLES << //
