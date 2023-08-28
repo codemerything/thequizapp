@@ -13,72 +13,100 @@ var questionText = document.querySelector("#question");
 var answerBoxes = document.querySelectorAll(".choice-text");
 
 scoreText.textContent = score;
+// the above is kept from before
 
-var questions = {
-  question1: {
-    questionNumber: "1",
-    question: 'Which planet is known as the "Red Planet"?',
-    answers: ["Venus", "Saturn", "Jupiter", "Mars"],
-    correctAnswer: "Mars",
-  },
-  question2: {
-    questionNumber: "2",
-    question: "What is the capital of France?",
-    answers: ["London", "Paris", "Madrid", "Berlin"],
-    correctAnswer: "Paris",
-  },
-  question3: {
-    questionNumber: "3",
-    question: "What is the largest mammal on Earth?",
-    answers: ["Elephant", "Giraffe", "Blue Whale", "Rhinoceros"],
-    correctAnswer: "Blue Whale",
-  },
-  question3: {
-    questionNumber: "3",
-    question: "What is the largest mammal on Earth?",
-    answers: ["Elephant", "Giraffe", "Blue Whale", "Rhinoceros"],
-    correctAnswer: "Blue Whale",
-  },
-};
+var allQuestions = []; //setting up an empty array to hold class instance objects
 
-//  >> Function to set the questions up dynamically!
-function runQuestion(x) {
-  // Set the question set  
-  var q = questions["question" + x];
-  var rightAnswer = q.correctAnswer;
+var QuestionClass = class {
+    constructor(questionNumber, question, answerList, rightAnswer) {
+        this.questionNumber = questionNumber;
+        this.question = question;
+        this.answerList = answerList;
+        this.rightAnswer = rightAnswer;
+        allQuestions.push(this); //add the new question object to the end of array
+    }
 
-  // Add the question number
-  questionNumberText.textContent = "Question " + q.questionNumber;
+    displayQuestion() { // this method is the same as the old one
+        questionNumberText.textContent = "Question " + this.questionNumber;
+        questionText.textContent = this.question;
 
-  // Add the actual question
-  questionText.textContent = q.question;
+        for (let i = 0; i < answerBoxes.length; i++) {
+            answerBoxes[i].textContent = this.answerList[i];
+            // reset the colour for each question (i.e. turn from red/green to bg colour)
+            answerBoxes[i].style.color = "var(--bg-colour)";
+        }
 
-  // Add the possible answers by looping through
-  // the choice-boxes in the document and adding the answers in
-  for (i = 0; i < answerBoxes.length; ++i) {
-    answerBoxes[i].textContent = q.answers[i];
+    }
+    checkQuestion(answerBox) { // i have moved the on click check into the method
+        console.log(answerBox.textContent)
 
-    // reset the colour for each question (i.e. turn from red/green to bg colour)
-    answerBoxes[i].style.color = "var(--bg-colour)";
-  }
-  
-  answerBoxes.forEach((answerBox) => {
-    answerBox.addEventListener('click', () => {
-        // TESTING: when you click on the right answer, it turns green and adds one point
-        if (answerBox.textContent == rightAnswer){
+        if (answerBox.textContent == this.rightAnswer) {
+            correct = true;
             answerBox.style.color = "green";
+            answerBox.style.pointerEvents = "none"; //after clicking, all following clicks ((ON THE CORRECT ANSWERBOX)) are disabled until the timeout brings in the next question
             score += 1;
             scoreText.textContent = score;
-            setTimeout( () => {runQuestion(x+1)}, 1000);
-        }
-        else if (answerBox.textContent != rightAnswer) {
+
+
+
+            setTimeout(() => {
+                answerBox.style.pointerEvents = "auto"; //returns clicks back to normal on that answerbox
+            }, 1000);
+        } else if (answerBox.textContent != this.rightAnswer) {
+
             answerBox.style.color = "red";
+
         }
-      
-    });
-  });
-
-
+    }
 }
 
-runQuestion(gameQuestionNumber);
+//you set up questions here :3
+
+new QuestionClass(1, 'Which planet is known as the "Red Planet"?', ["Venus", "Saturn", "Jupiter", "Mars"], "Mars");
+new QuestionClass(2, "What is the capital of France?", ["London", "Paris", "Madrid", "Berlin"], "Paris");
+new QuestionClass(3, "What is the largest mammal on Earth?", ["Elephant", "Giraffe", "Blue Whale", "Rhinoceros"], "Blue Whale");
+
+
+var clickedBox;//holds the element clicked
+var correct = false;
+
+function getClick(i) {// get click checks if a click has happened on an answer box. it is async because in order to use a for loop to iterate through the questions, you need it to await a click
+    return new Promise(acc => {
+        function handleClick() {
+            setTimeout(() => {
+                answerBoxes.forEach((answerBox) => {
+                    answerBox.removeEventListener('click', handleClick);
+                    if (correct = true) {
+                        correct = false;
+                        acc(); //fulfill promise
+                    }
+                });
+            }, 1000); //wait one second before continuing
+
+        }
+        answerBoxes.forEach((answerBox) => {
+            answerBox.addEventListener('click', () => { //apply event listener for each answe box
+                clickedBox = answerBox; //sets the clicked element globally
+                check(i);// checks the question
+                handleClick()// calls the other function as to fullful the promise and move on
+            });
+        });
+    });
+}
+
+
+function check(i) {
+    allQuestions[i].checkQuestion(clickedBox);//calling method of the current question object
+}
+
+async function main() {
+    for (let i = 0; i < allQuestions.length; i++) {//for loop that starts off by displaying the question, then calls get click
+
+        allQuestions[i].displayQuestion();
+
+        await getClick(i);
+
+    }
+
+}
+main();
