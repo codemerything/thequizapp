@@ -17,7 +17,7 @@ A beginner-friendly project built with: <br>
 2. Clone the project, you can use the following command:
 
 ```bash
-git clone https://github.com/mmnldm/thequizapp
+git clone https://github.com/<Your Github Username>/thequizapp
 ```
 
 3. Navigate to the project directory
