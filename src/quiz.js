@@ -1,3 +1,6 @@
+// >> THEME SELECTION CONTINOUS << //
+let theme = localStorage.getItem("site_theme") || "light";
+theme === "light" ? document.documentElement.classList.remove("dark-mode") : document.documentElement.classList.add("dark-mode");
 // >> VARIABLES << //
 let gameQuestionNumber = parseInt(
   document.querySelector("#game").dataset.question
@@ -65,7 +68,7 @@ function runQuestion(x) {
   questionText.textContent = q.question;
 
   // Add the possible answers by looping through the choice-boxes in the document and adding the answers in
-  for (i = 0; i < answerBoxes.length; ++i) {
+  for (let i = 0; i < answerBoxes.length; ++i) {
     answerBoxes[i].textContent = q.answers[i];
   }
 
