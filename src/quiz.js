@@ -14,71 +14,98 @@ var answerBoxes = document.querySelectorAll(".choice-text");
 
 scoreText.textContent = score;
 
-var questions = {
-  question1: {
-    questionNumber: "1",
-    question: 'Which planet is known as the "Red Planet"?',
-    answers: ["Venus", "Saturn", "Jupiter", "Mars"],
-    correctAnswer: "Mars",
-  },
-  question2: {
-    questionNumber: "2",
-    question: "What is the capital of France?",
-    answers: ["London", "Paris", "Madrid", "Berlin"],
-    correctAnswer: "Paris",
-  },
-  question3: {
-    questionNumber: "3",
-    question: "What is the largest mammal on Earth?",
-    answers: ["Elephant", "Giraffe", "Blue Whale", "Rhinoceros"],
-    correctAnswer: "Blue Whale",
-  },
-  question3: {
-    questionNumber: "3",
-    question: "What is the largest mammal on Earth?",
-    answers: ["Elephant", "Giraffe", "Blue Whale", "Rhinoceros"],
-    correctAnswer: "Blue Whale",
-  },
-};
+var allQuestions = [];
+var QuestionClass = class {
+    constructor(questionNumber, question, answerList, rightAnswer) {
+        this.questionNumber = questionNumber;
+        this.question = question;
+        this.answerList = answerList;
+        this.rightAnswer = rightAnswer;
+        allQuestions.push(this);
+    }
 
-//  >> Function to set the questions up dynamically!
-function runQuestion(x) {
-  // Set the question set  
-  var q = questions["question" + x];
-  var rightAnswer = q.correctAnswer;
+    displayQuestion() {
+        questionNumberText.textContent = "Question " + this.questionNumber;
+        questionText.textContent = this.question;
 
-  // Add the question number
-  questionNumberText.textContent = "Question " + q.questionNumber;
+        for (let i = 0; i < answerBoxes.length; i++) {
+            answerBoxes[i].textContent = this.answerList[i];
+            // reset the colour for each question (i.e. turn from red/green to bg colour)
+            answerBoxes[i].style.color = "var(--bg-colour)";
+        }
 
-  // Add the actual question
-  questionText.textContent = q.question;
+    }
+    checkQuestion(answerBox) {
+        console.log(answerBox.textContent)
 
-  // Add the possible answers by looping through
-  // the choice-boxes in the document and adding the answers in
-  for (i = 0; i < answerBoxes.length; ++i) {
-    answerBoxes[i].textContent = q.answers[i];
-
-    // reset the colour for each question (i.e. turn from red/green to bg colour)
-    answerBoxes[i].style.color = "var(--bg-colour)";
-  }
-  
-  answerBoxes.forEach((answerBox) => {
-    answerBox.addEventListener('click', () => {
-        // TESTING: when you click on the right answer, it turns green and adds one point
-        if (answerBox.textContent == rightAnswer){
+        if (answerBox.textContent == this.rightAnswer) {
+            correct = true;
             answerBox.style.color = "green";
+            answerBox.style.pointerEvents = "none"; //after clicking, all following clicks ((ON THE CORRECT ANSWERBOX)) are disabled until the timeout brings in the next question
             score += 1;
             scoreText.textContent = score;
-            setTimeout( () => {runQuestion(x+1)}, 1000);
-        }
-        else if (answerBox.textContent != rightAnswer) {
+
+
+
+            setTimeout(() => {
+                answerBox.style.pointerEvents = "auto";
+            }, 1000);
+        } else if (answerBox.textContent != this.rightAnswer) {
+
             answerBox.style.color = "red";
+
         }
-      
-    });
-  });
-
-
+    }
 }
 
-runQuestion(gameQuestionNumber);
+//you set up questions here :3
+
+new QuestionClass(1, 'Which planet is known as the "Red Planet"?', ["Venus", "Saturn", "Jupiter", "Mars"], "Mars");
+new QuestionClass(2, "What is the capital of France?", ["London", "Paris", "Madrid", "Berlin"], "Paris");
+new QuestionClass(3, "What is the largest mammal on Earth?", ["Elephant", "Giraffe", "Blue Whale", "Rhinoceros"], "Blue Whale");
+
+
+var clickedBox;
+var correct = false;
+
+function getClick(i) {
+    return new Promise(acc => {
+        function handleClick() {
+            setTimeout(() => {
+                answerBoxes.forEach((answerBox) => {
+                    answerBox.removeEventListener('click', handleClick);
+                    if (correct = true) {
+                        correct = false;
+                        acc();
+                    }
+                });
+            }, 1000);
+
+        }
+        answerBoxes.forEach((answerBox) => {
+            answerBox.addEventListener('click', () => {
+                clickedBox = answerBox;
+                check(i);
+                handleClick()
+            });
+        });
+    });
+}
+
+
+function check(i) {
+    console.log(i)
+    allQuestions[i].checkQuestion(clickedBox);
+}
+
+async function main() {
+    for (let i = 0; i < allQuestions.length; i++) {
+
+        allQuestions[i].displayQuestion();
+
+        await getClick(i);
+        console.log("click received", i);
+    }
+    console.log("done");
+}
+main();
