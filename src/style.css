@@ -64,7 +64,7 @@ h1 {
 }
 
 /* -- Start Screen -- */
-.startMainSection {
+.MainSection {
   display: flex;
   flex-direction: column;
   gap: 25px;
@@ -76,11 +76,11 @@ h1 {
   padding: 30px;
 }
 
-.startMainSection p {
+.MainSection p {
   text-align: center;
 }
 
-.startMainSection label {
+.MainSection label {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -105,7 +105,7 @@ h1 {
   box-shadow: var(--player-name-input-shadow);
 }
 
-#startQuizBtn {
+.btn {
   font-family: inherit;
   font-size: 1.2rem;
   padding: 5px 10px;
@@ -118,7 +118,7 @@ h1 {
   color: initial;
 }
 
-#startQuizBtn:hover {
+.btn:hover {
   background-color: var(--start-btn-bg-hover);
 }
 
