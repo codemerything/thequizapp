@@ -39,7 +39,7 @@ body {
   display: flex;
   min-height: 100vh;
   color: var(--text-colour);
-  font-size: 19px;
+  font-size: clamp(16px, 3vw, 19px);
   position: relative;
 }
 
@@ -197,3 +197,67 @@ h1 {
   width: 100%;
   color: var(--bg-colour);
 }
+
+
+
+
+@media (320px <= width <= 480px){
+
+  .container{
+    width: 60%;
+    max-width: 60%;
+  }
+
+  .stats-prefix, 
+  .stats-main-text, 
+  #question, 
+  .choice-prefix, 
+  .choice-text{
+    font-size: clamp(12px, 2vw, 19px);
+  }
+
+  .choice-prefix{
+    padding: 1.5rem 4vw; 
+  }
+ 
+}
+
+
+@media (481px <= width <= 768px){
+
+  .container{
+    width: 60%;
+    max-width: 60%;
+  }
+
+  .stats-prefix, 
+  .stats-main-text, 
+  #question, 
+  .choice-prefix, 
+  .choice-text{
+    font-size: clamp(12px, 2vw, 19px);
+  }
+
+  .choice-prefix{
+    padding: 1.5rem 4vw;
+  }
+ 
+}
+
+@media (769px <= width ){
+  .container{
+    width: 50%;
+    max-width: 50%;
+  }
+
+  .stats-prefix, 
+  .stats-main-text, 
+  #question, 
+  .choice-prefix, 
+  .choice-text{
+    font-size: clamp(12px, 2vw, 24px);
+  }
+
+ 
+}
+
