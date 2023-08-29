@@ -4,20 +4,15 @@ theme === "light"
   ? document.documentElement.classList.remove("dark-mode")
   : document.documentElement.classList.add("dark-mode");
 
-// Variable
+// Variables
 const scoreText = document.querySelector("#score");
 const playerName = document.querySelector("#playerName");
 const returnBtn = document.querySelector("#returnBtn");
 let score = localStorage.getItem("score");
 let getName = localStorage.getItem("playerName");
 
-// Getting the player's name
+// Getting the player's name and displaying it
 playerName.textContent = getName;
 
-// Getting the player's score
+// Getting the player's score and displaying it
 scoreText.textContent = score;
-
-// Reset the score and player's name from the local storage
-returnBtn.addEventListener("Click", function() {
-    
-});
