@@ -223,3 +223,14 @@ h1 {
     animation: octocat-wave 560ms ease-in-out;
   }
 }
+
+.endPageTitle {
+  font-size: 1rem;
+}
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+  margin-bottom: 15px;
+}
