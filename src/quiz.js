@@ -71,7 +71,8 @@ function runQuestion(x) {
   // Add the possible answers by looping through the choice-boxes in the document and adding the answers in
   for (let i = 0; i < answerBoxes.length; ++i) {
     answerBoxes[i].textContent = q.answers[i];
-
+  }
+  
   // When user clicks an answer
   answerBoxes.forEach((answerBox) => {
     answerBox.addEventListener("click", () => {
@@ -98,4 +99,3 @@ function runQuestion(x) {
     });
   });
   }
-}
