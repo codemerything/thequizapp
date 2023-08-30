@@ -64,7 +64,7 @@ h1 {
 }
 
 /* -- Start Screen -- */
-.startMainSection {
+.MainSection {
   display: flex;
   flex-direction: column;
   gap: 25px;
@@ -76,11 +76,11 @@ h1 {
   padding: 30px;
 }
 
-.startMainSection p {
+.MainSection p {
   text-align: center;
 }
 
-.startMainSection label {
+.MainSection label {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -105,7 +105,7 @@ h1 {
   box-shadow: var(--player-name-input-shadow);
 }
 
-#startQuizBtn {
+.btn {
   font-family: inherit;
   font-size: 1.2rem;
   padding: 5px 10px;
@@ -118,7 +118,7 @@ h1 {
   color: initial;
 }
 
-#startQuizBtn:hover {
+.btn:hover {
   background-color: var(--start-btn-bg-hover);
 }
 
@@ -199,6 +199,42 @@ h1 {
 }
 
 
+.github-corner:hover .octo-arm {
+  animation: octocat-wave 560ms ease-in-out;
+}
+@keyframes octocat-wave {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  20%,
+  60% {
+    transform: rotate(-25deg);
+  }
+  40%,
+  80% {
+    transform: rotate(10deg);
+  }
+}
+@media (max-width: 500px) {
+  .github-corner:hover .octo-arm {
+    animation: none;
+  }
+  .github-corner .octo-arm {
+    animation: octocat-wave 560ms ease-in-out;
+  }
+}
+
+.endPageTitle {
+  font-size: 1rem;
+}
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+  margin-bottom: 15px;
+}
 
 
 @media (320px <= width <= 480px){
@@ -260,4 +296,3 @@ h1 {
 
  
 }
-
