@@ -36,7 +36,7 @@ var mode = modesToggle.dataset.mode;
 
 // >> Function to set the dark theme
 function setDarkTheme() {
-  document.documentElement.classList.toggle("dark-mode");
+  document.documentElement.classList.add("dark-mode");
   modesToggle.innerHTML = '<i class="fa-solid fa-toggle-off"></i>';
   localStorage.setItem("site_theme", "dark");
   theme = 'dark';
@@ -46,7 +46,7 @@ function setDarkTheme() {
 
 //  >> Function to set the dark theme
 function setLightTheme() {
-  document.documentElement.classList.toggle("dark-mode");
+  document.documentElement.classList.remove("dark-mode");
   modesToggle.innerHTML = '<i class="fa-solid fa-toggle-on"></i>';
   localStorage.setItem("site_theme", "light");
   theme = 'light';
@@ -62,4 +62,3 @@ modesToggle.addEventListener("click", function () {
     setDarkTheme();
   }
 });
-
