@@ -1,6 +1,7 @@
 // >> THEME SELECTION CONTINUOUS << //
 let theme = localStorage.getItem("site_theme") || "light";
 theme === "light" ? document.documentElement.classList.remove("dark-mode") : document.documentElement.classList.add("dark-mode");
+
 // >> VARIABLES << //
 let gameQuestionNumber = parseInt(
   document.querySelector("#game").dataset.question
@@ -54,7 +55,7 @@ function runQuestion(x) {
   // Run this if x is higher than the number of questions available
   // + + Until the end [age is made, go to the start screen page!
   if (x > totalQuestions) {
-    window.location.href = "index.html";
+    window.location.href = "end-page.html";
   }
 
   // Set the question set
@@ -70,7 +71,6 @@ function runQuestion(x) {
   // Add the possible answers by looping through the choice-boxes in the document and adding the answers in
   for (let i = 0; i < answerBoxes.length; ++i) {
     answerBoxes[i].textContent = q.answers[i];
-  }
 
   // When user clicks an answer
   answerBoxes.forEach((answerBox) => {
@@ -97,10 +97,5 @@ function runQuestion(x) {
       }, 500);
     });
   });
+  }
 }
-
-// let insertPlayerName = document.querySelector("#insertPlayerName");
-
-// // Get the player's name from localStorage
-// let getPlayerName = localStorage.getItem("playerName");
-// insertPlayerName.textContent = getPlayerName;
