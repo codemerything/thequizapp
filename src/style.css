@@ -105,7 +105,7 @@ h1 {
 	background-color: var(--start-btn-bg);
 	outline: none;
 	transition: 400ms;
-	color: initial;
+	color: var(--btn-text-color);
 }
 
 .btn:hover {
@@ -186,7 +186,8 @@ h1 {
 .choice-text {
 	padding: 1.5rem;
 	width: 100%;
-	color: var(--bg-colour);
+	color: var(--choice-text-color);
+  background-color: var(--choice-text-bg-color);
 }
 
 .github-corner > svg {
