@@ -4,6 +4,7 @@ const startQuizBtn = document.querySelector("#startQuizBtn");
 const modesToggle = document.getElementById("modesToggle");
 const themeSelect = document.getElementById("themeSelect");
 const body = document.querySelector("body");
+let mode = body.dataset.mode;
 
 // ============================================================ //
 
@@ -27,68 +28,44 @@ function setPlayerName() {
 	localStorage.setItem("playerName", setPlayerName);
 }
 
-// >> To remember the theme you picked last
-// >> Get the theme from local storage, default to "light" if not found
 
-let theme = localStorage.getItem("site_theme") || "light";
-// >> Set the initial theme based on the value from local storage
-theme === "light" ? setLightTheme() : setDarkTheme();
+// Define theme classes
+const themes = {
+  light: "light-mode",
+  dark: "dark-mode",
+  autumn: "autumn-mode",
+  frog: "frog-mode",
+  christmas: "christmas-mode"
+};
 
-var mode = body.dataset.mode;
-
-// >> Function to set the light theme
-function setLightTheme() {
-	let currentMode = document.documentElement.classList;
-	currentMode.remove(...currentMode);
-	// currentMode.add("autumn-mode");
-	localStorage.setItem("site_theme", "light");
-	theme = "light";
-	mode = "light";
-}
-
-//  >> Function to set the dark theme
-function setDarkTheme() {
-	let currentMode = document.documentElement.classList;
-	currentMode.remove(...currentMode);
-	currentMode.add("dark-mode");
-	localStorage.setItem("site_theme", "dark");
-	theme = "dark";
-	mode = "dark";
-}
-
-//  >> Function to set the autumn theme
-function setAutumnTheme() {
+// Function to set theme
+function setTheme(themeName) {
   let currentMode = document.documentElement.classList;
-	currentMode.remove(...currentMode);
-	currentMode.add("autumn-mode");
-	localStorage.setItem("site_theme", "autumn");
-	theme = "autumn";
-	mode = "autumn";
-}
-
-//  >> Function to set the autumn theme
-function setFrogTheme() {
-  let currentMode = document.documentElement.classList;
-	currentMode.remove(...currentMode);
-	currentMode.add("frog-mode");
-	localStorage.setItem("site_theme", "frog");
-	theme = "frog";
-	mode = "frog";
+  currentMode.remove(...currentMode);
+  if (themeName !== "light") {
+    currentMode.add(themes[themeName]);
+  }
+  localStorage.setItem("site_theme", themeName);
+  theme = themeName;
+  mode = themeName;
 }
 
 themeSelect.addEventListener("change", function () {
-	const selectedValue = themeSelect.value;
-	switch (selectedValue) {
-		case "light":
-			setLightTheme();
-			break;
-		case "dark":
-			setDarkTheme();
-			break;
-		case "autumn":
-			setAutumnTheme();
-			break;
-		default:
-			break;
-	}
+  const selectedValue = themeSelect.value;
+  if (themes[selectedValue]) {
+    setTheme(selectedValue);
+  }
 });
+
+// >> To remember the theme you picked last
+// >> Get the theme from local storage, default to "light" if not found
+let theme = localStorage.getItem("site_theme") || "light";
+
+function setThemeRepeat(theme) {
+	if (themes[theme]) {
+		setTheme(theme);
+   themeSelect.value = theme;
+	}
+}
+
+setThemeRepeat(theme);

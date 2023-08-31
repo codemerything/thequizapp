@@ -1,5 +1,5 @@
 :root {
-    --bg-colour: #e0afa8;
+	--bg-colour: #e0afa8;
 	--second-bg-colour: #edbfb8;
 	--text-colour: #312b2b;
 	--main-font: "Melodrama", serif;
@@ -7,11 +7,14 @@
 	--player-name-input-colour: white;
 	--player-name-input-shadow: 0px 0px 3px #786060b1;
 	--start-btn-bg: #e0afa8;
+	--btn-text-color: #312b2b;
 	--start-btn-bg-hover: #ce9a91;
 	--player-name-input-text: #121212;
 	--choice-prefix-text: white;
 	--github-corner-fill: black;
 	--github-corner-color: white;
+    --choice-text-bg-color: #ffffff;
+	--choice-text-color: #121212;
 }
 
 .dark-mode {
@@ -22,11 +25,14 @@
 	--player-name-input-colour: #262321;
 	--player-name-input-shadow: 0px 0px 3px #ebbfbfb1;
 	--start-btn-bg: #e0afa8;
+	--btn-text-color: #121212;
 	--start-btn-bg-hover: #c98e83;
 	--player-name-input-text: white;
 	--choice-prefix-text: white;
 	--github-corner-fill: white;
 	--github-corner-color: black;
+	--choice-text-bg-color: #e0afa8;
+	--choice-text-color: #121212;
 }
 .autumn-mode {
 	--bg-colour: #ffcb69;
@@ -37,9 +43,50 @@
 	--player-name-input-colour: white;
 	--player-name-input-shadow: 0px 0px 3px #786060b1;
 	--start-btn-bg: #ffcb69;
+	--btn-text-color: #621708;
 	--start-btn-bg-hover: #fdda9a;
 	--player-name-input-text: #121212;
 	--choice-prefix-text: #621708;
 	--github-corner-fill: #bc3908;
 	--github-corner-color: white;
+	--choice-text-bg-color: #f3ebdb;
+	--choice-text-color: #bc3908;
+}
+
+.frog-mode {
+	--bg-colour: #bfd8bd;
+	--second-bg-colour: #edeec9;
+	--text-colour: #036666;
+	--main-font: "Melodrama", serif;
+	--bg-image: url(bg-images/frog.png);
+	--player-name-input-colour: white;
+	--player-name-input-shadow: 0px 0px 3px #786060b1;
+	--start-btn-bg: #ffd3ce;
+	--btn-text-color: #036666;
+	--start-btn-bg-hover: #f9bbbb;
+	--player-name-input-text: #121212;
+	--choice-prefix-text: #ee9292;
+	--github-corner-fill: #036666;
+	--github-corner-color: #f9bbbb;
+	--choice-text-bg-color: #f2f3db;
+	--choice-text-color: #036666;
+}
+
+.christmas-mode {
+	--bg-colour: #386641;
+	--second-bg-colour: #bc4749;
+	--text-colour: #f2e8cf;
+	--main-font: "Melodrama", serif;
+	--bg-image: url(bg-images/christmas.png);
+	--player-name-input-colour: white;
+	--player-name-input-shadow: 0px 0px 3px #786060b1;
+	--start-btn-bg: #6a994e;
+	--btn-text-color: #132e18;
+	--start-btn-bg-hover: #a7c957;
+	--player-name-input-text: #132e18;
+	--choice-prefix-text: white;
+	--github-corner-fill: #6a994e;
+	--github-corner-color: white;
+    --choice-text-bg-color: #ffffff;
+	--choice-text-color: #43291f;
 }
