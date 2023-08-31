@@ -28,22 +28,22 @@ body {
 	top: 20px;
 	left: 20px;
 	cursor: pointer;
-  display: none;
+	display: none;
 }
 
 #themeSelect {
 	position: absolute;
 	top: 20px;
 	left: 20px;
-  text-align: center;
-  background-color: var(--second-bg-colour);
+	text-align: center;
+	background-color: var(--second-bg-colour);
 	color: var(--text-colour);
-  font-family: inherit;
-  padding: 2px;
-  padding-bottom: 4px;
-  font-size: 1rem;
-  border: 1px solid white;
-  box-shadow: 3px 3px 5px #451e1e37;
+	font-family: inherit;
+	padding: 2px;
+	padding-bottom: 4px;
+	font-size: 0.9rem;
+	border: 1px solid white;
+	box-shadow: 3px 3px 5px #451e1e37;
 }
 
 h1 {
@@ -171,7 +171,7 @@ h1 {
 
 .choice-container:hover {
 	cursor: pointer;
-	box-shadow: 0 0.4rem 1.4rem 0 var(--bg-colour);
+	box-shadow: 0 0 1rem 0 var(--bg-colour);
 	transform: translateY(-0.1rem);
 	transition: transform 150ms;
 }
@@ -180,13 +180,18 @@ h1 {
 	padding: 1.5rem 2.5rem;
 	border: var(--player-name-input-text) 1px solid;
 	background-color: var(--bg-colour);
-	color: white;
+	color: var(--choice-prefix-text);
 }
 
 .choice-text {
 	padding: 1.5rem;
 	width: 100%;
 	color: var(--bg-colour);
+}
+
+.github-corner > svg {
+  fill: var(--github-corner-fill);
+  color: var(--github-corner-color);
 }
 
 .github-corner:hover .octo-arm {

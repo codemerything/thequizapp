@@ -1,14 +1,17 @@
 :root {
-	--bg-colour: #e0afa8;
-	--second-bg-colour: #edbfb8;
-	--text-colour: #312b2b;
+	--bg-colour: #ffcb69;
+	--second-bg-colour: #e8ac65;
+	--text-colour: #621708;
 	--main-font: "Melodrama", serif;
-	--bg-image: url(bg-images/bg.png);
+	--bg-image: url(bg-images/autumn.png);
 	--player-name-input-colour: white;
 	--player-name-input-shadow: 0px 0px 3px #786060b1;
-	--start-btn-bg: #e0afa8;
-	--start-btn-bg-hover: #ce9a91;
+	--start-btn-bg: #ffcb69;
+	--start-btn-bg-hover: #fdda9a;
 	--player-name-input-text: #121212;
+	--choice-prefix-text: #621708;
+	--github-corner-fill: #bc3908;
+	--github-corner-color: white;
 }
 
 /* All of the dark mode colours as of right now! */
@@ -22,4 +25,32 @@
 	--start-btn-bg: #e0afa8;
 	--start-btn-bg-hover: #c98e83;
 	--player-name-input-text: white;
+	--choice-prefix-text: white;
+	--github-corner-fill: white;
+	--github-corner-color: black;
+}
+.autumn-mode {
+	--bg-colour: #121212;
+	--second-bg-colour: #1b1919;
+	--text-colour: #e0afa8;
+	--bg-image: url(bg-images/autumn.png);
+	--player-name-input-colour: #262321;
+	--player-name-input-shadow: 0px 0px 3px #ebbfbfb1;
+	--start-btn-bg: #e0afa8;
+	--start-btn-bg-hover: #c98e83;
+	--player-name-input-text: white;
+
+	--bg-colour: #e0afa8;
+	--second-bg-colour: #edbfb8;
+	--text-colour: #312b2b;
+	--main-font: "Melodrama", serif;
+	--bg-image: url(bg-images/bg.png);
+	--player-name-input-colour: white;
+	--player-name-input-shadow: 0px 0px 3px #786060b1;
+	--start-btn-bg: #e0afa8;
+	--start-btn-bg-hover: #ce9a91;
+	--player-name-input-text: #121212;
+	--choice-prefix-text: white;
+	--github-corner-fill: black;
+	--github-corner-color: white;
 }
