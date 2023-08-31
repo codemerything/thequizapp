@@ -32,64 +32,63 @@ function setPlayerName() {
 
 let theme = localStorage.getItem("site_theme") || "light";
 // >> Set the initial theme based on the value from local storage
-// theme === "light" ? setLightTheme() : setDarkTheme();
-
-theme = themeSelect.value;
-
-switch (theme) {
-	case "light":
-		setLightTheme();
-		break;
-	case "dark":
-		setDarkTheme();
-		break;
-	case "autumn":
-		setAutumnTheme();
-		break;
-	default:
-		break;
-}
+theme === "light" ? setLightTheme() : setDarkTheme();
 
 var mode = body.dataset.mode;
 
-// >> Function to set the dark theme
-function setDarkTheme() {
-	document.documentElement.classList.add("dark-mode");
-	modesToggle.innerHTML = '<i class="fa-solid fa-toggle-off"></i>';
-	localStorage.setItem("site_theme", "dark");
-	theme = "dark";
-	modesToggle.dataset.mode = "light";
-	mode = "light"; // Update the mode variable
-}
-
-//  >> Function to set the dark theme
+// >> Function to set the light theme
 function setLightTheme() {
-	document.documentElement.classList.remove("dark-mode");
-	modesToggle.innerHTML = '<i class="fa-solid fa-toggle-on"></i>';
-	localStorage.setItem("site_theme", "light");
-	theme = "light";
-	modesToggle.dataset.mode = "dark";
-	mode = "dark";
-}
-
-//  >> Function to set the dark theme
-function setAutumnTheme() {
 	let currentMode = document.documentElement.classList;
 	currentMode.remove(...currentMode);
-
-	document.documentElement.classList.remove("dark-mode");
-	modesToggle.innerHTML = '<i class="fa-solid fa-toggle-on"></i>';
+	// currentMode.add("autumn-mode");
 	localStorage.setItem("site_theme", "light");
 	theme = "light";
-	modesToggle.dataset.mode = "dark";
+	mode = "light";
+}
+
+//  >> Function to set the dark theme
+function setDarkTheme() {
+	let currentMode = document.documentElement.classList;
+	currentMode.remove(...currentMode);
+	currentMode.add("dark-mode");
+	localStorage.setItem("site_theme", "dark");
+	theme = "dark";
 	mode = "dark";
 }
 
-// >> The Light/Dark Mode Switch!!
-modesToggle.addEventListener("click", function () {
-	if (mode === "light") {
-		setLightTheme();
-	} else if (mode === "dark") {
-		setDarkTheme();
+//  >> Function to set the autumn theme
+function setAutumnTheme() {
+  let currentMode = document.documentElement.classList;
+	currentMode.remove(...currentMode);
+	currentMode.add("autumn-mode");
+	localStorage.setItem("site_theme", "autumn");
+	theme = "autumn";
+	mode = "autumn";
+}
+
+//  >> Function to set the autumn theme
+function setFrogTheme() {
+  let currentMode = document.documentElement.classList;
+	currentMode.remove(...currentMode);
+	currentMode.add("frog-mode");
+	localStorage.setItem("site_theme", "frog");
+	theme = "frog";
+	mode = "frog";
+}
+
+themeSelect.addEventListener("change", function () {
+	const selectedValue = themeSelect.value;
+	switch (selectedValue) {
+		case "light":
+			setLightTheme();
+			break;
+		case "dark":
+			setDarkTheme();
+			break;
+		case "autumn":
+			setAutumnTheme();
+			break;
+		default:
+			break;
 	}
 });
