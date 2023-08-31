@@ -20,6 +20,10 @@ currentMode.remove(...currentMode);
 			currentMode.add("frog-mode");
 			localStorage.setItem("site_theme", "frog");
 			break;
+		case "christmas":
+			currentMode.add("christmas-mode");
+			localStorage.setItem("site_theme", "christmas");
+			break;
 		default:
 			break;
 	}

@@ -34,7 +34,8 @@ const themes = {
   light: "light-mode",
   dark: "dark-mode",
   autumn: "autumn-mode",
-  frog: "frog-mode"
+  frog: "frog-mode",
+  christmas: "christmas-mode"
 };
 
 // Function to set theme
@@ -68,62 +69,3 @@ function setThemeRepeat(theme) {
 }
 
 setThemeRepeat(theme);
-
-// // >> Function to set the light theme
-// function setLightTheme() {
-// 	let currentMode = document.documentElement.classList;
-// 	currentMode.remove(...currentMode);
-// 	localStorage.setItem("site_theme", "light");
-// 	theme = "light";
-// 	mode = "light";
-// }
-
-// //  >> Function to set the dark theme
-// function setDarkTheme() {
-// 	let currentMode = document.documentElement.classList;
-// 	currentMode.remove(...currentMode);
-// 	currentMode.add("dark-mode");
-// 	localStorage.setItem("site_theme", "dark");
-// 	theme = "dark";
-// 	mode = "dark";
-// }
-
-// //  >> Function to set the autumn theme
-// function setAutumnTheme() {
-//   let currentMode = document.documentElement.classList;
-// 	currentMode.remove(...currentMode);
-// 	currentMode.add("autumn-mode");
-// 	localStorage.setItem("site_theme", "autumn");
-// 	theme = "autumn";
-// 	mode = "autumn";
-// }
-
-// //  >> Function to set the frog theme
-// function setFrogTheme() {
-//   let currentMode = document.documentElement.classList;
-// 	currentMode.remove(...currentMode);
-// 	currentMode.add("frog-mode");
-// 	localStorage.setItem("site_theme", "frog");
-// 	theme = "frog";
-// 	mode = "frog";
-// }
-
-// themeSelect.addEventListener("change", function () {
-// 	const selectedValue = themeSelect.value;
-// 	switch (selectedValue) {
-// 		case "light":
-// 			setLightTheme();
-// 			break;
-// 		case "dark":
-// 			setDarkTheme();
-// 			break;
-// 		case "autumn":
-// 			setAutumnTheme();
-// 			break;
-// 		default:
-// 			break;
-// 	}
-// });
-
-
-

@@ -71,3 +71,22 @@
 	--choice-text-bg-color: #f2f3db;
 	--choice-text-color: #036666;
 }
+
+.christmas-mode {
+	--bg-colour: #386641;
+	--second-bg-colour: #bc4749;
+	--text-colour: #f2e8cf;
+	--main-font: "Melodrama", serif;
+	--bg-image: url(bg-images/christmas.png);
+	--player-name-input-colour: white;
+	--player-name-input-shadow: 0px 0px 3px #786060b1;
+	--start-btn-bg: #6a994e;
+	--btn-text-color: #132e18;
+	--start-btn-bg-hover: #a7c957;
+	--player-name-input-text: #132e18;
+	--choice-prefix-text: white;
+	--github-corner-fill: #6a994e;
+	--github-corner-color: white;
+    --choice-text-bg-color: #ffffff;
+	--choice-text-color: #43291f;
+}
