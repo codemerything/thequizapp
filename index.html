@@ -19,10 +19,12 @@
     <title>The Quiz App</title>
   </head>
   <body>
-    <section class="startMainSection">
-        <button id="modesToggle" data-mode="light" title="Theme mode switch"><i class="fa-solid fa-toggle-off"></i></button>
+    <header>
+      <button id="modesToggle" data-mode="light" title="Theme mode switch"><i class="fa-solid fa-toggle-off"></i></button>
       <h1>The Quiz App</h1>
+    </header>
 
+    <main>
       <p>
         Welcome to The Quiz App! The quiz consists of 5 questions! <br />Enter
         your name and start the quiz!
@@ -35,15 +37,16 @@
           name="playerNameInput"
           id="playerNameInput"
           aria-label="Your player name"
-          placeholder="player name"
+          placeholder="Player Name"
         />
       </label>
 
-      <a href="quiz.html" role="button" aria-labelledby="startQuizBtn"
-        ><input type="button" value="Start Quiz" id="startQuizBtn"
-      /></a>
-    </section>
+      <button id="startQuizBtn" aria-labelledby="startQuizBtnLabel">
+        Let's Quiz
+      </button>
+    </main>
 
     <script src="src/index.js"></script>
   </body>
 </html>
+
