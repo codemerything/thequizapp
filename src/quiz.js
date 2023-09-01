@@ -121,3 +121,23 @@ function runQuestion(x) {
 		});
 	});
 }
+
+const questionURL = './src/quiz-games.json';
+
+const quizId = localStorage.getItem('quizid');
+
+function getQuestions(quizId) {
+	fetch(questionURL)
+	  .then((response) => response.json())
+	  .then((questions) => {
+		// Check if xo is a valid index in the questions array
+		const object = questions[quizId].questions;
+
+		
+		console.log(object);
+
+	  });
+	}
+
+  getQuestions('quiz' +quizId);
+  
