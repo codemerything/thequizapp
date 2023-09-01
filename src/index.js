@@ -18,7 +18,7 @@ playerNameInput.addEventListener("keypress", function (event) {
 		// Cancel the default action, if needed
 		event.preventDefault();
 		setPlayerName();
-		window.location.href = "quiz.html";
+		window.location.href = "selection-page.html";
 	}
 });
 
