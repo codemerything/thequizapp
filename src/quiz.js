@@ -35,109 +35,73 @@ const scoreText = document.querySelector("#score");
 let score = 0;
 const questionText = document.querySelector("#question");
 const answerBoxes = document.querySelectorAll(".choice-text");
-let questions = {
-	question1: {
-		questionNumber: "1",
-		question: 'Which planet is known as the "Red Planet"?',
-		answers: ["Venus", "Saturn", "Jupiter", "Mars"],
-		correctAnswer: "Mars",
-	},
-	question2: {
-		questionNumber: "2",
-		question: "What is the capital of France?",
-		answers: ["London", "Paris", "Madrid", "Berlin"],
-		correctAnswer: "Paris",
-	},
-	question3: {
-		questionNumber: "3",
-		question: "What is the largest mammal on Earth?",
-		answers: ["Elephant", "Giraffe", "Blue Whale", "Rhinoceros"],
-		correctAnswer: "Blue Whale",
-	},
-	question4: {
-		questionNumber: "4",
-		question: 'Who wrote the play "Romeo and Juliet"?',
-		answers: ["Mark Twain", "Jane Austen", "Charles Dickens", "William Shakespeare"],
-		correctAnswer: "William Shakespeare",
-	},
-	question5: {
-		questionNumber: "5",
-		question: "Which famous scientist developed the theory of general relativity?",
-		answers: ["Isaac Newton", "Albert Einstein", "Galileo Galilei", "Nikola Tesla"],
-		correctAnswer: "Albert Einstein",
-	},
-};
-let totalQuestions = Object.keys(questions).length; // The total questions = the total number of questions in the questions object
 
-// >> MISC << //
-scoreText.textContent = score;
-runQuestion(gameQuestionNumber);
+// * Define the URL for the JSON file containing quiz questions
+const questionURL = "./src/quiz-games.json";
 
-// >> FUNCTIONS << //
-//  >> Function to set the questions up dynamically!
-function runQuestion(x) {
-	// Run this if x is higher than the number of questions available
-	// + + Until the end [age is made, go to the start screen page!
-	if (x > totalQuestions) {
-		window.location.href = "end-page.html";
-	}
+// * Get the quizId from localStorage
+const quizId = localStorage.getItem("quizid");
 
-	// Set the question set
-	let q = questions["question" + x];
-	let rightAnswer = q.correctAnswer;
+//* Call the getQuestions function with the retrieved 'quizid'
+getQuestions("quiz" + quizId);
 
-	// Add the question number
-	questionNumberText.textContent = "Question " + q.questionNumber;
+// * Function to fetch and display quiz questions
+function getQuestions(quizId) {
+// * Fetch the questions from JSON 
+  fetch(questionURL)
+    .then((response) => response.json())
+    .then((questions) => {
 
-	// Add the actual question
-	questionText.textContent = q.question;
+		// * Access the questions for the specified quiz
+      const object = questions[quizId].questions;
 
-	// Add the possible answers by looping through the choice-boxes in the document and adding the answers in
-	for (let i = 0; i < answerBoxes.length; ++i) {
-		answerBoxes[i].textContent = q.answers[i];
-	}
+      let totalQuestions = Object.keys(object).length;
+      runQuestion(gameQuestionNumber);
 
-	// When user clicks an answer
-	answerBoxes.forEach((answerBox) => {
-		answerBox.addEventListener("click", () => {
-			if (answerBox.textContent == rightAnswer) {
-				score += 1;
-				scoreText.textContent = score;
-				answerBox.style.color = "green";
-			} else if (answerBox.textContent != rightAnswer) {
-				answerBox.style.color = "red";
-			}
+	//* Function to display a question
+      function runQuestion(x) {
+        if (x > totalQuestions) {
+          window.location.href = "end-page.html";
+        }
 
-			// Set the new score to localStorage
-			localStorage.setItem("score", score);
+        let q = object["question" + x];
+        let rightAnswer = q.correctAnswer;
 
-			// This is set incase we want to add some kind of effect or timer before the next question
-			setTimeout(function () {
-				answerBox.style.color = "var(--choice-text-color)";
-				let newQuestion = x + 1;
-				document.querySelector("#game").dataset.question = newQuestion;
-				runQuestion(newQuestion);
-			}, 500);
-		});
-	});
+        // Add the question number
+        questionNumberText.textContent = "Question " + q.questionNumber;
+
+        // Add the actual question
+        questionText.textContent = q.question;
+
+        // Add the possible answers by looping through the choice-boxes in the document and adding the answers in
+        for (let i = 0; i < answerBoxes.length; ++i) {
+          answerBoxes[i].textContent = q.answers[i];
+        }
+
+        // When user clicks an answer
+        answerBoxes.forEach((answerBox) => {
+          answerBox.addEventListener("click", () => {
+            if (answerBox.textContent == rightAnswer) {
+              score += 1;
+              scoreText.textContent = score;
+              answerBox.style.color = "green";
+            } else if (answerBox.textContent != rightAnswer) {
+              answerBox.style.color = "red";
+            }
+
+            // Set the new score to localStorage
+            localStorage.setItem("score", score);
+
+            // This is set incase we want to add some kind of effect or timer before the next question
+            setTimeout(function () {
+              answerBox.style.color = "var(--choice-text-color)";
+              let newQuestion = x + 1;
+              document.querySelector("#game").dataset.question = newQuestion;
+              runQuestion(newQuestion);
+            }, 500);
+          });
+        });
+      }
+    });
 }
 
-const questionURL = './src/quiz-games.json';
-
-const quizId = localStorage.getItem('quizid');
-
-function getQuestions(quizId) {
-	fetch(questionURL)
-	  .then((response) => response.json())
-	  .then((questions) => {
-		// Check if xo is a valid index in the questions array
-		const object = questions[quizId].questions;
-
-		
-		console.log(object);
-
-	  });
-	}
-
-  getQuestions('quiz' +quizId);
-  
