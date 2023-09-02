@@ -25,20 +25,22 @@
       <h1 id="endPageTitle">End of The Quiz!</h1>
       <div class="textContainer">
         <h2>Well done <span id="playerName"></span>!</h2>
-        <p>
-           You completed the quiz game!
-        </p>
+        <p>You completed the quiz game!</p>
         <p>Your score is: <span id="score"></span></p>
         <p>Thank you and play again soon!</p>
       </div>
-      <a href="index.html" role="button" aria-labelledby="returnBtn">
-        <input
-          type="button"
-          value="Return to start screen"
-          id="returnBtn"
-          class="btn"
-        />
-      </a>
+      <div class="btn-container">
+        <button role="button" class="btn">
+          <a href="index.html">
+            Return to start screen
+            </a>
+        </button>
+        <button role="button" class="btn">
+          <a href="selection-page.html" >
+            Return to select quiz screen
+          </a>
+        </button>
+      </div>
     </section>
 
     <script src="src/end-page.js" type="module"></script>

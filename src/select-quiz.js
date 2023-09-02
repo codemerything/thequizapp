@@ -47,7 +47,7 @@ function getQuizTitles() {
       document.addEventListener('keypress', (e) => {
         if(e.key === "Enter" && highlightButton){
             localStorage.setItem('quizid', highlightButton.className[0]);
-            location.href = "quiz.html";
+            window.location.href = "quiz.html";
         }
       })
     

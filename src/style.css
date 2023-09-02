@@ -91,11 +91,16 @@ h1 {
 	background-color: var(--start-btn-bg);
 	outline: none;
 	transition: 400ms;
-	color: var(--btn-text-color);
+	
 }
 
 .btn:hover {
 	background-color: var(--start-btn-bg-hover);
+}
+
+.btn a {
+	color: var(--btn-text-color);
+	text-decoration: none !important;
 }
 
 /* QUIZ STYLE*/
