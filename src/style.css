@@ -268,9 +268,10 @@ h1 {
   background-color: var(--start-btn-bg-hover);
 }
 
-#selection-header h2 {
+#selection-header h2, #labelForInput {
   text-align: center;
 }
+
 
 @media (width < 500px) {
   .MainSection {
