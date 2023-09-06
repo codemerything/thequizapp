@@ -4,32 +4,6 @@
   box-sizing: border-box;
 }
 
-:root {
-  --bg-colour: #e0afa8;
-  --second-bg-colour: #edbfb8;
-  --text-colour: #312b2b;
-  --main-font: "Melodrama", serif;
-  --bg-image: url(bg.png);
-  --player-name-input-colour: white;
-  --player-name-input-shadow: 0px 0px 3px #786060b1;
-  --start-btn-bg: #e0afa8;
-  --start-btn-bg-hover: #ce9a91;
-  --player-name-input-text: #121212;
-}
-
-/* All of the dark mode colours as of right now! */
-.dark-mode {
-  --bg-colour: #121212;
-  --second-bg-colour: #1b1919;
-  --text-colour: #e0afa8;
-  --bg-image: url(dark-bg.png);
-  --player-name-input-colour: #262321;
-  --player-name-input-shadow: 0px 0px 3px #ebbfbfb1;
-  --start-btn-bg: #e0afa8;
-  --start-btn-bg-hover: #c98e83;
-  --player-name-input-text: white;
-}
-
 body {
   background-color: var(--bg-colour);
   background-image: var(--bg-image);
@@ -43,17 +17,19 @@ body {
   position: relative;
 }
 
-#modesToggle {
+#themeSelect {
   position: absolute;
-  width: 60px;
-  font-size: 2.5rem;
-  padding: 4px;
-  border: 1px solid white;
-  background-color: var(--second-bg-colour);
-  color: var(--text-colour);
   top: 20px;
   left: 20px;
-  cursor: pointer;
+  text-align: center;
+  background-color: var(--second-bg-colour);
+  color: var(--text-colour);
+  font-family: inherit;
+  padding: 2px;
+  padding-bottom: 4px;
+  font-size: 0.9rem;
+  border: 1px solid white;
+  box-shadow: 3px 3px 5px #451e1e37;
 }
 
 h1 {
@@ -115,11 +91,15 @@ h1 {
   background-color: var(--start-btn-bg);
   outline: none;
   transition: 400ms;
-  color: initial;
 }
 
 .btn:hover {
   background-color: var(--start-btn-bg-hover);
+}
+
+.btn a {
+  color: var(--btn-text-color);
+  text-decoration: none !important;
 }
 
 /* QUIZ STYLE*/
@@ -154,11 +134,12 @@ h1 {
 }
 
 .stats-item {
-    display: flex;
-    gap: 5px;
+  display: flex;
+  gap: 5px;
 }
 
-.stats-prefix, .stats-item {
+.stats-prefix,
+.stats-item {
   text-align: center;
   font-size: 2rem;
   color: var(--player-name-input-text);
@@ -167,7 +148,7 @@ h1 {
 .answer-container {
   display: flex;
   flex-direction: column;
-  gap: 10px;    
+  gap: 10px;
 }
 
 .choice-container {
@@ -180,7 +161,7 @@ h1 {
 
 .choice-container:hover {
   cursor: pointer;
-  box-shadow: 0 0.4rem 1.4rem 0 var(--bg-colour);
+  box-shadow: 0 0 1rem 0 var(--bg-colour);
   transform: translateY(-0.1rem);
   transition: transform 150ms;
 }
@@ -189,19 +170,43 @@ h1 {
   padding: 1.5rem 2.5rem;
   border: var(--player-name-input-text) 1px solid;
   background-color: var(--bg-colour);
-  color: white;
+  color: var(--choice-prefix-text);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .choice-text {
   padding: 1.5rem;
   width: 100%;
-  color: var(--bg-colour);
+  color: var(--choice-text-color);
+  background-color: var(--choice-text-bg-color);
 }
 
+.github-corner > svg {
+  fill: var(--github-corner-fill);
+  color: var(--github-corner-color);
+}
 
 .github-corner:hover .octo-arm {
   animation: octocat-wave 560ms ease-in-out;
 }
+
+/* SELCTION STYLE */
+
+.highlighted {
+  background-color: var(--selection-btn-colour);
+}
+
+.selectOption {
+  font-family: inherit;
+  font-size: 1.2rem;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #918080b1;
+  cursor: pointer;
+}
+
 @keyframes octocat-wave {
   0%,
   100% {
@@ -236,63 +241,95 @@ h1 {
   margin-bottom: 15px;
 }
 
+#selectSection {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+}
 
-@media (320px <= width <= 480px){
+.quizList {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  gap: 20px;
+}
 
-  .container{
-    width: 60%;
-    max-width: 60%;
-  }
+.quizList p {
+  border: 1px solid var(--text-colour);
+  padding: 10px;
+  transition: 300ms;
+  cursor: pointer;
+}
 
-  .stats-prefix, 
-  .stats-main-text, 
-  #question, 
-  .choice-prefix, 
-  .choice-text{
-    font-size: clamp(12px, 2vw, 19px);
-  }
+.quizList p:hover {
+  background-color: var(--start-btn-bg-hover);
+}
 
-  .choice-prefix{
-    padding: 1.5rem 4vw; 
-  }
- 
+#selection-header h2, #labelForInput {
+  text-align: center;
 }
 
 
-@media (481px <= width <= 768px){
-
-  .container{
-    width: 60%;
-    max-width: 60%;
+@media (width < 500px) {
+  .MainSection {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--second-bg-colour);
+    border: 1px solid white;
+    box-shadow: 5px 5px 5px #451e1e37;
+    padding: 30px;
+    width: 80%;
   }
 
-  .stats-prefix, 
-  .stats-main-text, 
-  #question, 
-  .choice-prefix, 
-  .choice-text{
-    font-size: clamp(12px, 2vw, 19px);
+  .MainSection h1 {
+    font-family: var(--main-font);
+    font-weight: 600;
+    font-size: 2.5rem;
+    text-align: center;
   }
 
-  .choice-prefix{
-    padding: 1.5rem 4vw;
-  }
- 
-}
-
-@media (769px <= width ){
-  .container{
-    width: 50%;
-    max-width: 50%;
+  .container {
+    width: 80%;
+    max-width: 80%;
   }
 
-  .stats-prefix, 
-  .stats-main-text, 
-  #question, 
-  .choice-prefix, 
-  .choice-text{
-    font-size: clamp(12px, 2vw, 24px);
+  #question, .stats-prefix, .stats-main-text {
+    font-size: 1.4rem;
   }
 
- 
+  .choice-text, .choice-prefix {
+    font-size: 1.2rem;
+  }
+
+  .quizList {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    gap: 20px;
+    padding: 0 20px;
+  }
+
+  .quizList p {
+    font-size: 1rem;
+  }
+
+  .endPageBtns {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    
+  }
+
+  .btn {
+    font-size: 1rem;
+  }
 }

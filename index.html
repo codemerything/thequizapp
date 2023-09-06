@@ -15,10 +15,11 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="stylesheet" href="src/themes.css" />
     <link rel="stylesheet" href="src/style.css" />
     <title>The Quiz App</title>
   </head>
-  <body>
+  <body data-mode="light">
     <a
       href="https://github.com/mmnldm/thequizapp"
       class="github-corner"
@@ -28,14 +29,7 @@
         width="80"
         height="80"
         viewBox="0 0 250 250"
-        style="
-          fill: #151513;
-          color: #fff;
-          position: absolute;
-          top: 0;
-          border: 0;
-          right: 0;
-        "
+        style="position: absolute; top: 0; border: 0; right: 0"
         aria-hidden="true"
       >
         <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
@@ -53,9 +47,13 @@
     ></a>
 
     <section class="MainSection">
-      <button id="modesToggle" data-mode="light" title="Theme mode switch">
-        <i class="fa-solid fa-toggle-off"></i>
-      </button>
+      <select id="themeSelect">
+        <option value="light" data-mode="light">🌅 Light</option>
+        <option value="dark">🌑 Dark</option>
+        <option value="autumn">🍂 Autumn</option>
+        <option value="frog">🐸 Frog</option>
+        <option value="christmas">🎄 Christmas</option>
+      </select>
       <h1>The Quiz App</h1>
 
       <p>
@@ -63,19 +61,20 @@
         your name and start the quiz!
       </p>
 
-      <label for="playerNameInput">
-        Enter your player name:
+      <label for="playerNameInput" id="labelForInput">
+        Enter your player name (6 characters):
         <input
           type="text"
           name="playerNameInput"
           id="playerNameInput"
           aria-label="Your player name"
           placeholder="player name"
+          maxlength="6"
         />
       </label>
 
-      <a href="quiz.html" role="button" aria-labelledby="startQuizBtn"
-        ><input type="button" value="Start Quiz" id="startQuizBtn" class="btn"
+      <a href="selection-page.html" role="button" aria-labelledby="startQuizBtn"
+        ><input type="button" value="Select Quiz" id="startQuizBtn" class="btn"
       /></a>
     </section>
 
