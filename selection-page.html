@@ -1,28 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link href="https://api.fontshare.com/v2/css?f[]=melodrama@400,600,500&display=swap" rel="stylesheet" />
-		<link rel="shortcut icon" href="src/logo.png" type="image/x-icon" />
-		<link
-			rel="stylesheet"
-			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-			integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-			crossorigin="anonymous"
-			referrerpolicy="no-referrer"
-		/>
-		<link rel="stylesheet" href="src/themes.css" />
-		<link rel="stylesheet" href="src/style.css" />
-		<title>Select Quiz</title>
-	</head>
-    <body data-mode="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=melodrama@400,600,500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="src/logo.png" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="src/themes.css" />
+    <link rel="stylesheet" href="src/style.css" />
+    <title>Select Quiz</title>
+  </head>
+  <body data-mode="light">
+    <section class="MainSection" id="selection-header">
+      <h1>Welcome <span id="playerName"></span>!</h1>
+      <h2>Please select quiz category below:</h2>
 
-		<section class="MainSection" id="selection-header">
-			<h1>Welcome <span id="playerName"></span>!</h1>
-			<h2>Please select quiz category below:</h2>
-		</section>
+      <section id="selectSection">
+        <div class="quizList">
+        </div>
+		<button class="btn" id="startQuizBtn">Start Quiz</button>
+      </section>
+    </section>
 
-        <script src="./src/select-quiz.js"></script>
-    </body>
+    <script src="./src/select-quiz.js"></script>
+  </body>
 </html>

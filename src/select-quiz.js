@@ -33,6 +33,8 @@ const selectionHeader = document.getElementById("selection-header");
 const selected = document.getElementById("selected");
 let getName = localStorage.getItem("playerName");
 const playerName = document.getElementById("playerName");
+const quizList = document.querySelector(".quizList");
+const startQuizBtn = document.querySelector("#startQuizBtn");
 
 playerName.textContent = getName;
 
@@ -48,7 +50,7 @@ function getQuizTitles() {
           const quiz = quizzes[quizId];
           const title = quiz.title;
 
-          let titleText = document.createElement("button");
+          let titleText = document.createElement("p");
           titleText.classList.add(
             `${quiz.quizId}`,
             "selectButton",
@@ -56,7 +58,7 @@ function getQuizTitles() {
           );
 
           titleText.textContent = title;
-          selectionHeader.append(titleText);
+          quizList.append(titleText);
         }
       }
       select();
@@ -78,8 +80,8 @@ function select() {
     });
   });
 
-  document.addEventListener("keypress", (e) => {
-    if (e.key === "Enter" && highlightButton) {
+  startQuizBtn.addEventListener("click", () => {
+    if (highlightButton) {
       localStorage.setItem("quizid", highlightButton.className[0]);
       window.location.href = "quiz.html";
     }
