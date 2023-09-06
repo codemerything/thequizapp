@@ -15,6 +15,7 @@
 	--github-corner-color: white;
     --choice-text-bg-color: #ffffff;
 	--choice-text-color: #121212;
+	--selection-btn-colour: #efcdc8;
 }
 
 .dark-mode {
@@ -33,6 +34,8 @@
 	--github-corner-color: black;
 	--choice-text-bg-color: #e0afa8;
 	--choice-text-color: #121212;
+	--selection-btn-colour: #895a51;
+
 }
 .autumn-mode {
 	--bg-colour: #ffcb69;
@@ -51,6 +54,7 @@
 	--github-corner-color: white;
 	--choice-text-bg-color: #f3ebdb;
 	--choice-text-color: #bc3908;
+	--selection-btn-colour: #df5726;
 }
 
 .frog-mode {
@@ -70,6 +74,8 @@
 	--github-corner-color: #f9bbbb;
 	--choice-text-bg-color: #f2f3db;
 	--choice-text-color: #036666;
+	--selection-btn-colour: #abe1c5;
+
 }
 
 .christmas-mode {
@@ -89,4 +95,5 @@
 	--github-corner-color: white;
     --choice-text-bg-color: #ffffff;
 	--choice-text-color: #43291f;
+	--selection-btn-colour: #8d6a5b;
 }
