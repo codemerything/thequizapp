@@ -7,12 +7,17 @@
 [![GitHub stars](https://img.shields.io/github/stars/mmnldm/thequizapp?style=plastic)](https://img.shields.io/github/stars/mmnldm/thequizapp) <br>
 This is a quiz app that allows users to playfully customized quizzes right on their browsers. It is free and open-source.
 
+## Preview 🖥
+![](https://github.com/mmnldm/thequizapp/blob/c3c58f1fb638891e80fde0b95acae4140be8379e/src/bg-images/quizapp.gif)
+
+To take a quiz, click on the link:
+<a href="https://mmnldm.github.io/thequizapp/">The Quiz App</a>
+
+## Technology ⚙
 A beginner-friendly project built with: <br>
 [![My Skills](https://skillicons.dev/icons?i=js,html,css)](https://skillicons.dev)
 
-
-
-## Meet the Contributors 
+## Meet the Contributors 🤝🏾
 
 Thanks for contributing to `The Quiz App`.
 
