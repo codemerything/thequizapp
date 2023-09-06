@@ -13,8 +13,7 @@ This is a quiz app that allows users to playfully customized quizzes right on th
 To take a quiz, click on the link:
 <a href="https://mmnldm.github.io/thequizapp/">The Quiz App</a>
 
-## Technology ⚙
-A beginner-friendly project built with: <br>
+## Technology Used⚙
 [![My Skills](https://skillicons.dev/icons?i=js,html,css)](https://skillicons.dev)
 
 ## Meet the Contributors 🤝🏾
