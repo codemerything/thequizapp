@@ -36,6 +36,8 @@ let score = 0;
 const questionText = document.querySelector("#question");
 const answerBoxes = document.querySelectorAll(".choice-text");
 
+scoreText.textContent = score;
+
 // * Define the URL for the JSON file containing quiz questions
 const questionURL = "./src/quiz-games.json";
 
